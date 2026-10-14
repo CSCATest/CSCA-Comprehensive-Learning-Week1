@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSCA Mathematics Question Bank: Sets & Inequalities (250+ Questions)</title>
+  <title>CSCA Mathematics Question Bank: Sets and Inequalities (300 Questions)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
@@ -20,8 +20,6 @@
       --success-light: #dcfce7;
       --danger: #dc2626;
       --danger-light: #fee2e2;
-      --warning: #d97706;
-      --warning-light: #fef3c7;
       --slate-50: #f8fafc;
       --slate-100: #f1f5f9;
       --slate-200: #e2e8f0;
@@ -55,7 +53,7 @@
     }
 
     .hero-content {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -69,13 +67,18 @@
     }
 
     .brand-logo {
-      height: 50px;
+      height: 52px;
       width: auto;
       background: #f9f7f2;
       border-radius: 10px;
       padding: 4px 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.18);
       flex-shrink: 0;
+    }
+
+    @media (max-width: 560px) {
+      .brand-logo { height: 40px; }
+      .hero-brand { gap: 10px; }
     }
 
     .hero-title h1 {
@@ -90,7 +93,7 @@
       font-family: var(--brand-font);
       font-size: 0.68rem;
       letter-spacing: 0.06em;
-      opacity: 0.9;
+      opacity: 0.85;
     }
 
     /* ==================== 2. SLIM STICKY COMMAND BAR ==================== */
@@ -104,7 +107,7 @@
     }
 
     .sticky-inner {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 8px 16px;
       display: flex;
@@ -122,29 +125,28 @@
 
     .topic-tabs {
       display: flex;
+      flex-wrap: wrap;
       gap: 4px;
       background: var(--slate-100);
       padding: 3px;
       border-radius: 6px;
-      overflow-x: auto;
-      max-width: 100%;
     }
 
     .tab-btn {
       background: transparent;
       border: none;
       color: var(--slate-700);
-      padding: 5px 10px;
+      padding: 5px 12px;
       border-radius: 4px;
-      font-size: 0.73rem;
-      font-weight: 500;
+      font-size: 0.74rem;
+      font-weight: 400;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 5px;
-      white-space: nowrap;
       transition: all 0.15s;
       font-family: var(--brand-font);
+      letter-spacing: 0.02em;
     }
 
     .tab-btn:hover {
@@ -158,16 +160,15 @@
     }
 
     .tab-badge {
-      font-size: 0.65rem;
-      background: rgba(0,0,0,0.06);
-      padding: 1px 5px;
-      border-radius: 10px;
+      font-size: 0.7rem;
+      opacity: 0.75;
+      font-family: var(--brand-font);
     }
 
     .bar-controls {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -177,17 +178,18 @@
       gap: 6px;
       background: var(--slate-50);
       border: 1px solid var(--slate-200);
-      padding: 4px 8px;
+      padding: 3px 10px;
       border-radius: 4px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
     }
 
     .stat-lbl {
       color: var(--slate-600);
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 0.66rem;
+      font-size: 0.7rem;
       font-family: var(--brand-font);
+      letter-spacing: 0.02em;
     }
 
     .stat-val {
@@ -195,48 +197,23 @@
       color: var(--slate-800);
     }
 
-    /* Exam Timer Pill */
-    .timer-pill {
-      display: none;
-      align-items: center;
-      gap: 6px;
-      background: var(--slate-900);
-      color: #fff;
-      padding: 4px 10px;
-      border-radius: 5px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      transition: all 0.2s;
-    }
-
-    .timer-pill.warning {
-      background: var(--warning);
-      color: #fff;
-    }
-
-    .timer-pill.danger {
-      background: var(--danger);
-      color: #fff;
-      animation: pulse 1s infinite alternate;
-    }
-
-    @keyframes pulse {
-      from { transform: scale(1); }
-      to { transform: scale(1.04); }
-    }
-
-    .timer-btn-icon {
-      background: rgba(255,255,255,0.2);
+    .timer-btn {
+      background: transparent;
       border: none;
-      color: white;
-      padding: 2px 6px;
-      border-radius: 3px;
-      font-size: 0.68rem;
+      color: var(--slate-600);
       cursor: pointer;
+      font-size: 0.75rem;
+      padding: 1px 4px;
+      border-radius: 3px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-    .timer-btn-icon:hover {
-      background: rgba(255,255,255,0.35);
+
+    .timer-btn:hover {
+      color: var(--brand);
+      background: var(--slate-200);
     }
 
     .mode-switch {
@@ -251,11 +228,13 @@
       background: transparent;
       border: none;
       color: var(--slate-700);
-      padding: 4px 8px;
-      font-size: 0.72rem;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
       border-radius: 3px;
       cursor: pointer;
       font-family: var(--brand-font);
+      letter-spacing: 0.02em;
     }
 
     .mode-btn.active {
@@ -268,11 +247,13 @@
       background: var(--slate-100);
       border: 1px solid var(--slate-300);
       color: var(--slate-700);
-      padding: 4px 9px;
+      padding: 4px 10px;
       border-radius: 4px;
-      font-size: 0.74rem;
+      font-size: 0.78rem;
+      font-weight: 600;
       cursor: pointer;
       font-family: var(--brand-font);
+      letter-spacing: 0.02em;
     }
 
     .btn-action:hover {
@@ -293,13 +274,13 @@
       background: none;
       border: none;
       color: var(--brand);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       cursor: pointer;
-      font-family: var(--brand-font);
+      font-weight: 600;
       padding: 2px 4px;
+      font-family: var(--brand-font);
     }
 
-    /* 1-50 Navigator Grid */
     .bar-nav-row {
       overflow-x: auto;
       padding-top: 2px;
@@ -313,7 +294,7 @@
       display: grid;
       grid-template-columns: repeat(25, 1fr);
       gap: 4px;
-      min-width: 720px;
+      min-width: 700px;
     }
 
     .jump-node {
@@ -353,75 +334,9 @@
       color: var(--danger);
     }
 
-    /* Timer Settings Modal */
-    .modal-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1000;
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-box {
-      background: white;
-      border-radius: var(--radius);
-      padding: 24px;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .modal-box h3 {
-      font-family: var(--brand-font);
-      font-size: 1rem;
-      margin-bottom: 12px;
-      color: var(--slate-900);
-    }
-
-    .timer-presets {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .timer-preset-btn {
-      padding: 8px;
-      background: var(--slate-100);
-      border: 1px solid var(--slate-300);
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .timer-preset-btn:hover, .timer-preset-btn.active {
-      background: var(--brand-light);
-      border-color: var(--brand);
-      color: var(--brand-dark);
-    }
-
-    .custom-time-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .custom-time-input {
-      width: 80px;
-      padding: 6px 10px;
-      border: 1px solid var(--slate-300);
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
     /* ==================== 3. QUESTIONS LIST ==================== */
     main {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 18px auto 0;
       padding: 0 16px;
     }
@@ -438,7 +353,7 @@
       padding: 20px 24px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.04);
       border: 1px solid var(--slate-200);
-      scroll-margin-top: 110px;
+      scroll-margin-top: 105px;
     }
 
     .q-header {
@@ -450,14 +365,14 @@
     }
 
     .q-id {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--brand);
+      color: var(--primary);
     }
 
     .q-tag {
-      background: var(--brand-light);
-      color: var(--brand-dark);
+      background: var(--primary-light);
+      color: var(--primary-dark);
       padding: 2px 8px;
       border-radius: 10px;
       font-size: 0.72rem;
@@ -499,15 +414,15 @@
     }
 
     .opt-btn:hover:not(:disabled) {
-      background: var(--brand-light);
-      border-color: var(--brand);
-      color: var(--brand-dark);
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .opt-btn.selected {
-      border-color: var(--brand);
-      background: var(--brand-light);
-      color: var(--brand-dark);
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary-dark);
       font-weight: 600;
     }
 
@@ -548,7 +463,6 @@
       border-left: 4px solid var(--danger);
     }
 
-    /* Key Table Section */
     .key-section {
       background: white;
       border-radius: var(--radius);
@@ -592,7 +506,7 @@
 
     .key-table td.correct-highlight {
       font-weight: 700;
-      color: var(--brand);
+      color: var(--primary);
     }
 
     .collapse-content {
@@ -609,57 +523,99 @@
       font-size: 0.8rem;
       color: var(--slate-600);
     }
+  
 
-    @media (max-width: 768px) {
-      .hero-brand { gap: 10px; }
-      .brand-logo { height: 40px; }
-      .hero-title h1 { font-size: 0.88rem; }
+    /* In-page timer dialog (does not use the browser's prompt popup). */
+    .timer-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.62);
     }
+    .timer-modal-backdrop[hidden] { display: none !important; }
+    .timer-modal {
+      width: min(100%, 380px);
+      padding: 24px;
+      border-radius: 14px;
+      background: #fff;
+      color: #172033;
+      box-shadow: 0 20px 70px rgba(0,0,0,.3);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    .timer-modal h2 { margin: 0 0 8px; font-size: 1.25rem; }
+    .timer-modal p { margin: 0 0 16px; color: #64748b; font-size: .92rem; }
+    .timer-modal label { display: block; margin-bottom: 6px; font-weight: 650; }
+    .timer-modal input {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font: inherit;
+      color: #0f172a;
+      background: #fff;
+    }
+    .timer-modal input:focus { outline: 3px solid rgba(37,99,235,.18); border-color: #2563eb; }
+    .timer-modal-error { min-height: 1.25em; margin-top: 7px; color: #b91c1c; font-size: .85rem; }
+    .timer-modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+    .timer-modal-actions button {
+      border: 0; border-radius: 8px; padding: 10px 15px; cursor: pointer;
+      font: inherit; font-weight: 650;
+    }
+    .timer-modal-cancel { background: #e2e8f0; color: #334155; }
+    .timer-modal-save { background: #2563eb; color: #fff; }
+    .timer-modal-save:hover { background: #1d4ed8; }
+    .brand-logo-fallback {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 40px; padding: 4px 10px; border-radius: 10px;
+      background: #fff; color: #cc342c; font-weight: 800; letter-spacing: .02em;
+    }
+
   </style>
 </head>
 <body>
 
-<!-- Top Hero Banner -->
 <header class="hero-banner">
   <div class="hero-content">
     <div class="hero-brand">
-      <img class="brand-logo" src="data:image/png;base64,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 atmospheric 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" alt="Crossline EDU">
+      <img class="brand-logo" src="data:image/png;base64,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" alt="Crossline EDU logo">
       <div class="hero-title">
-        <h1>CSCA Mathematics Question Bank: Sets & Inequalities</h1>
-        <p>Chinese College Preparatory Exam Standards · 6 Modular Topic Sets · 250 Questions</p>
+        <h1>CSCA Sets & Inequalities Question Bank (300 Questions)</h1>
+        <p>Chinese College Preparatory / Standard Entrance Exam Syllabus</p>
       </div>
     </div>
   </div>
 </header>
 
-<!-- Sticky Command Bar -->
 <div class="sticky-bar">
   <div class="sticky-inner">
-    <!-- Row 1: Tabs + Stats + Mode + Timer + Controls -->
     <div class="bar-top-row">
-      <!-- 6 Topic Tabs -->
       <div class="topic-tabs">
-        <button class="tab-btn active" onclick="switchTab('sets_concepts')" id="tab-sets_concepts">
+        <button class="tab-btn active" onclick="switchTab('set_concepts')" id="tab-set_concepts">
           Set Concepts (集合概念) <span class="tab-badge">50</span>
         </button>
-        <button class="tab-btn" onclick="switchTab('sets_union')" id="tab-sets_union">
-          Set Union (集合并集) <span class="tab-badge">50</span>
+        <button class="tab-btn" onclick="switchTab('set_relations')" id="tab-set_relations">
+          Set Relations (集合关系) <span class="tab-badge">50</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('set_union')" id="tab-set_union">
+          Union of Sets (并集) <span class="tab-badge">50</span>
         </button>
         <button class="tab-btn" onclick="switchTab('ineq_properties')" id="tab-ineq_properties">
           Ineq. Properties (不等式性质) <span class="tab-badge">50</span>
         </button>
-        <button class="tab-btn" onclick="switchTab('ineq_quadratic')" id="tab-ineq_quadratic">
-          Quadratic Ineq. (一元二次) <span class="tab-badge">50</span>
+        <button class="tab-btn" onclick="switchTab('quadratic_ineq')" id="tab-quadratic_ineq">
+          Quadratic Ineq. (一元二次不等式) <span class="tab-badge">50</span>
         </button>
-        <button class="tab-btn" onclick="switchTab('ineq_fractional')" id="tab-ineq_fractional">
+        <button class="tab-btn" onclick="switchTab('fractional_ineq')" id="tab-fractional_ineq">
           Fractional Ineq. (分式不等式) <span class="tab-badge">50</span>
-        </button>
-        <button class="tab-btn" onclick="switchTab('mixed_mock')" id="tab-mixed_mock">
-          Mixed Mock Exam (综合全真) <span class="tab-badge">50</span>
         </button>
       </div>
 
-      <!-- Controls & Stats -->
       <div class="bar-controls">
         <div class="stat-pill">
           <span class="stat-lbl">Progress</span>
@@ -676,11 +632,12 @@
           <span class="stat-val" id="stat-score" style="color:var(--success);">0%</span>
         </div>
 
-        <!-- Customizable Exam Timer Pill -->
-        <div class="timer-pill" id="exam-timer-pill">
-          <span>⏱️ <span id="timer-display">45:00</span></span>
-          <button class="timer-btn-icon" id="timer-toggle-btn" onclick="toggleTimer()">⏸</button>
-          <button class="timer-btn-icon" onclick="openTimerModal()">⚙️</button>
+        <!-- Customizable Exam Timer -->
+        <div class="stat-pill" id="timer-box" style="display:none;">
+          <span class="stat-lbl">Timer</span>
+          <span class="stat-val" id="timer-display" style="cursor:pointer; font-variant-numeric:tabular-nums;" onclick="promptTimerDuration()" title="Click to customize duration">45:00</span>
+          <button class="timer-btn" id="timer-toggle-btn" onclick="toggleTimer()" title="Play / Pause">⏸</button>
+          <button class="timer-btn" id="timer-config-btn" onclick="promptTimerDuration()" title="Set Duration (min)">⚙</button>
         </div>
 
         <div class="mode-switch">
@@ -694,7 +651,6 @@
       </div>
     </div>
 
-    <!-- Row 2: 1-50 Navigator in Compact Grid -->
     <div class="bar-nav-row" id="bar-nav-row">
       <div class="jump-grid-compact" id="jump-grid"></div>
     </div>
@@ -702,13 +658,11 @@
 </div>
 
 <main>
-  <!-- Questions Container -->
   <section class="question-list" id="questions-container"></section>
 
-  <!-- Quick Answer Key Section -->
   <section class="key-section">
     <div class="key-header" onclick="toggleAnswerKey()">
-      <h3 id="key-title">Quick Answer Key</h3>
+      <h3 id="key-title">Quick Answer Key (Set Concepts)</h3>
       <span id="key-arrow" style="font-size:1rem; font-weight:bold;">▼</span>
     </div>
     <div class="collapse-content" id="key-content">
@@ -719,369 +673,334 @@
   </section>
 </main>
 
-<!-- Timer Customization Modal -->
-<div class="modal-overlay" id="timer-modal">
-  <div class="modal-box">
-    <h3>Configure Exam Timer</h3>
-    <p style="font-size:0.84rem; color:var(--slate-600); margin-bottom:14px;">Select a standard duration or set custom minutes for your timed mock test:</p>
-    
-    <div class="timer-presets">
-      <button class="timer-preset-btn" onclick="selectPresetMinutes(30)">30 Min</button>
-      <button class="timer-preset-btn active" onclick="selectPresetMinutes(45)">45 Min</button>
-      <button class="timer-preset-btn" onclick="selectPresetMinutes(60)">60 Min</button>
-      <button class="timer-preset-btn" onclick="selectPresetMinutes(75)">75 Min</button>
-      <button class="timer-preset-btn" onclick="selectPresetMinutes(90)">90 Min</button>
-      <button class="timer-preset-btn" onclick="selectPresetMinutes(120)">120 Min</button>
-    </div>
-
-    <div class="custom-time-row">
-      <label style="font-size:0.85rem; font-weight:600;">Custom Minutes:</label>
-      <input type="number" id="custom-minutes-input" class="custom-time-input" min="1" max="240" value="45">
-    </div>
-
-    <div style="display:flex; justify-content:flex-end; gap:8px;">
-      <button class="btn-action" onclick="closeTimerModal()">Cancel</button>
-      <button class="btn-action primary" onclick="applyTimerSettings()">Apply & Restart</button>
-    </div>
-  </div>
-</div>
-
 <footer>
-  <p>© CSCA Mathematics Question Bank · 6 Comprehensive Topic Modules · 250 Questions Embedded</p>
+  <p>© CSCA Mathematics Question Bank · All 300 Questions Embedded</p>
 </footer>
 
 <script>
-/* ==================== 1. EMBEDDED QUESTION DATA ==================== */
+/* ==================== COMPACT QUESTION REPOSITORIES (300 QUESTIONS) ==================== */
+const RAW_SETS = [
+  ["SC001","Definition of a Set and Elements","Given the set A = {0, 1, 2, 3}, which of the following relations is correct? (　　)",["A. -1 ∈ A","B. 0 ∉ A","C. 2 ∈ A","D. {1} ∈ A"],"C"],
+  ["SC002","Representation of a Set","Given the set A = {x ∈ ℕ | x² + x - 2 = 0}, which of the following is the roster form of A? (　　)",["A. {-2, 1}","B. {1}","C. {1, 2}","D. ∅"],"B"],
+  ["SC003","Representation of a Set","Given the set M = {2, 4, 6, 8}, which of the following sets represents the same set as M? (　　)",["A. {x ∈ ℕ⁺ | x < 8}","B. {x | x = 2n, n ∈ {1, 2, 3, 4}}","C. {x | x is a positive divisor of 8}","D. {x ∈ ℤ | 0 < x ≤ 8}"],"B"],
+  ["SC004","Distinctness of Elements in a Set","Given A = {1, 2, 2, 3} and B = {3, 2, 1}, which statement is correct? (　　)",["A. Set A has 4 elements","B. Sets A and B represent the same set","C. The elements of B must be arranged in ascending order","D. A and {1, 2, 3, 4} represent the same set"],"B"],
+  ["SC005","Relationship Between Elements and Sets","Given A = {0, 1}, which relation is correct? (　　)",["A. 0 ⊆ A","B. {1} ∈ A","C. {0} ⊆ A","D. {0, 1} ∈ A"],"C"],
+  ["SC006","Definition of a Set and Elements","Given A = {x | x² - 3x + 2 = 0}, which conclusion is correct? (　　)",["A. 0 ∈ A","B. 1 ∉ A","C. 2 ∈ A","D. 3 ∈ A"],"C"],
+  ["SC007","Number of Elements in a Set","If A = {x | x² + 2x - 3 = 0}, how many elements does A contain? (　　)",["A. 0","B. 1","C. 2","D. 3"],"C"],
+  ["SC008","Number of Elements in a Set","Given A = {1, 2, 2, 3}, how many elements does A contain? (　　)",["A. 2","B. 3","C. 4","D. 5"],"B"],
+  ["SC009","Representation of a Set","Which is the roster form of A = {x ∈ ℤ | |x| ≤ 2}? (　　)",["A. {-2, -1, 0, 1, 2}","B. {-2, -1, 1, 2}","C. {-1, 0, 1}","D. {0, 1, 2}"],"A"],
+  ["SC010","Representation of a Set","Given M = {x ∈ ℤ | 6/x ∈ ℤ}, which of the following belongs to M? (　　)",["A. 0","B. 4","C. 5","D. 6"],"D"],
+  ["SC011","Common Number Sets and Membership","Which statement about common number sets and their relationships is correct? (　　)",["A. 0 ∉ ℕ","B. ℤ ⊆ ℕ","C. ℚ ⊆ ℝ","D. ℝ ⊆ ℤ"],"C"],
+  ["SC012","Common Number Sets and Membership","Let ℚ be the set of rational numbers. Which of the following belongs to ℚ? (　　)",["A. π","B. √2","C. 3.14","D. √3"],"C"],
+  ["SC013","Representation of a Set","The set A is represented by the interval (-2, 1]. Which set-builder notation correctly represents A? (　　)",["A. {x | -2 < x < 1}","B. {x | -2 ≤ x ≤ 1}","C. {x | -2 < x ≤ 1}","D. {x | -2 ≤ x < 1}"],"C"],
+  ["SC014","Representation of a Set","Let A be the set of all real numbers x for which 1/(x+2) is defined. Which set-builder notation correctly represents A? (　　)",["A. {x | x ≠ 2}","B. {x | x ≠ -2}","C. {x | x = -2}","D. {x | x ≠ 0}"],"B"],
+  ["SC015","Equality of Sets","Which pair of sets represents equal sets? (　　)",["A. {1, 2} and {(1, 2)}","B. {x | x² = 1} and {1}","C. {x | x is a positive divisor of 4} and {1, 2, 4}","D. {0} and ∅"],"C"],
+  ["SC016","Equality of Sets","Given A = {1, 2, a} and B = {2, 1, 3}. If A = B, what is the value of the real number a? (　　)",["A. 1","B. 2","C. 3","D. 4"],"C"],
+  ["SC017","Equality of Sets","Given A = {1, a} and B = {1, 3}. If A = B, what is the value of the real number a? (　　)",["A. 1","B. 2","C. 3","D. 4"],"C"],
+  ["SC018","Empty Set","Which of the following represents the empty set? (　　)",["A. {0}","B. {x ∈ ℕ | x < 0}","C. {x | x² = 1}","D. {1}"],"B"],
+  ["SC019","Empty Set and Set Relations","Which relation is correct? (　　)",["A. 0 ∈ ∅","B. ∅ ∈ {0}","C. ∅ ⊆ {0}","D. {0} ⊆ ∅"],"C"],
+  ["SC020","Empty Set and Set Relations","Given A = {0, 1}, which relation is correct? (　　)",["A. ∅ ∈ A","B. {0} ∈ A","C. ∅ ⊆ A","D. A ⊆ ∅"],"C"],
+  ["SC021","Empty Set and Set Relations","For any set A, which relation is always true? (　　)",["A. ∅ ∈ A","B. ∅ ⊆ A","C. A ⊆ ∅","D. {∅} ⊆ A"],"B"],
+  ["SC022","Basic Relations Between Sets","Given A = {2, 4, 6} and B = {2, 4, 6, 8}, which relation is correct? (　　)",["A. A ∈ B","B. A ⊊ B","C. B ⊊ A","D. A = B"],"B"],
+  ["SC023","Basic Relations Between Sets","Given M = {x | x = 3k, k ∈ ℤ} and N = {x | x = 6k, k ∈ ℤ}, what is the relationship between M and N? (　　)",["A. M ⊊ N","B. N ⊊ M","C. M = N","D. M ∈ N"],"B"],
+  ["SC024","Basic Relations Between Sets","Given A = {1, 2} and B = {1, 2, 3}, which relation is correct? (　　)",["A. A ∈ B","B. A ⊆ B","C. B ⊆ A","D. A = B"],"B"],
+  ["SC025","Basic Relations Between Sets","Given A = {x ∈ ℤ | -1 ≤ x ≤ 1} and B = {-1, 0, 1}, which statement is correct? (　　)",["A. A ⊊ B","B. B ⊊ A","C. A = B","D. A ∈ B"],"C"],
+  ["SC026","Subsets","Given A = {1, 2}, how many subsets does A have? (　　)",["A. 2","B. 3","C. 4","D. 8"],"C"],
+  ["SC027","Proper Subsets","Given M = {a, b, c}, how many proper subsets does M have? (　　)",["A. 3","B. 7","C. 8","D. 15"],"B"],
+  ["SC028","Proper Subsets","Given A = {-2, -1, 0, 1, 2}, how many proper subsets does A have? (　　)",["A. 30","B. 31","C. 32","D. 33"],"B"],
+  ["SC029","Proper Subsets","If a finite set has 31 proper subsets, how many elements does the set contain? (　　)",["A. 4","B. 5","C. 31","D. 32"],"B"],
+  ["SC030","Subsets and the Empty Set","Given A = {x | x² - 1 = 0}, which relation between the empty set ∅ and A is correct? (　　)",["A. ∅ ∈ A","B. ∅ ⊊ A","C. A ⊆ ∅","D. A = ∅"],"B"],
+  ["SC031","Listing Subsets","Given A = {x ∈ ℤ | 0 ≤ x < 3}, which of the following is a subset of A? (　　)",["A. {-1, 1}","B. {0, 1}","C. {1, 2, 3}","D. {0, 1, 2, 3}"],"B"],
+  ["SC032","Subsets and Elements","Given A = {1, 2}, which relation is correct? (　　)",["A. 1 ∈ A","B. {1} ∈ A","C. 2 ⊆ A","D. {1, 2} ∈ A"],"A"],
+  ["SC033","Number of Subsets","Given A = {a, b, c, d, e}, how many subsets does A have? (　　)",["A. 16","B. 25","C. 32","D. 64"],"C"],
+  ["SC034","Proper Subsets","Given A = {1, 2, 3, 4}, how many proper subsets does A have? (　　)",["A. 14","B. 15","C. 16","D. 17"],"B"],
+  ["SC035","Non-empty Subsets","Given A = {0, 1, 2}, how many non-empty subsets does A have? (　　)",["A. 6","B. 7","C. 8","D. 9"],"B"],
+  ["SC036","Number of Subsets","Given A = {x ∈ ℕ | x < 5}, how many 2-element subsets does A have? (　　)",["A. 6","B. 10","C. 15","D. 32"],"B"],
+  ["SC037","Number of Subsets","If set A has 32 subsets in total, how many elements does A contain? (　　)",["A. 4","B. 5","C. 16","D. 32"],"B"],
+  ["SC038","Proper Subsets","Given A = {x | x ∈ ℤ, 1 ≤ x ≤ n}. If A has 31 proper subsets, what is the value of the positive integer n? (　　)",["A. 4","B. 5","C. 6","D. 31"],"B"],
+  ["SC039","Subset Relations","Given A = {2, a} and B = {1, 2, 3}. If A ⊆ B and a > 2, what is the value of a? (　　)",["A. 1","B. 2","C. 3","D. 4"],"C"],
+  ["SC040","Proper Subsets","Given A = {1, 2} and B = {1, 2, 3}, which relation is correct? (　　)",["A. A ∈ B","B. A ⊊ B","C. B ⊆ A","D. A = B"],"B"],
+  ["SC041","Number of Elements in a Set","Given A = {x ∈ ℤ | x² ≤ 5}, how many elements does A contain? (　　)",["A. 2","B. 3","C. 4","D. 5"],"D"],
+  ["SC042","Number of Elements in a Set","Given A = {x ∈ ℤ | x² = 1}, how many elements does A contain? (　　)",["A. 0","B. 1","C. 2","D. 3"],"C"],
+  ["SC043","Empty Set","Given A = {x ∈ ℝ | x² + 1 = 0}, how many elements does A contain? (　　)",["A. 0","B. 1","C. 2","D. 3"],"A"],
+  ["SC044","Number of Elements in a Set","Given A = {x | (x - 2)² = 0}, how many elements does A contain? (　　)",["A. 0","B. 1","C. 2","D. 3"],"B"],
+  ["SC045","Representation of a Set","Which of the following set representations is written correctly? (　　)",["A. {x | x² - 1 = 0}","B. {x² - 1 = 0}","C. {x = 1, x = -1}","D. {the set of real numbers}"],"A"],
+  ["SC046","Definition of a Set and Elements","Which of the following collections of objects cannot form a set? (　　)",["A. All positive integers","B. All right triangles","C. The relatively tall students in a certain class","D. All real roots of the equation x² - 4 = 0"],"C"],
+  ["SC047","Representation of a Set","Given A = {-4, -2, 0, 2, 4} and B = {x ∈ ℤ | -4 ≤ x ≤ 4 and x is even}, which statement is correct? (　　)",["A. A = B","B. A ⊊ B","C. B ⊊ A","D. A ∈ B"],"A"],
+  ["SC048","Basic Relations Between Sets","Given M = {-2, 0, 2} and N = {-2, -1, 0, 1, 2}, which statement is correct? (　　)",["A. M ⊊ N","B. N ⊊ M","C. M = N","D. M ∈ N"],"A"],
+  ["SC049","Number of Subsets","Given A = {1, 2, 3, 4, 5, 6}, how many subsets does A have? (　　)",["A. 64","B. 63","C. 32","D. 31"],"A"],
+  ["SC050","Common Number Sets and Membership","Which relation is correct? (　　)",["A. -1 ∈ ℕ","B. 0 ∈ ℤ","C. √2 ∈ ℚ","D. 1/2 ∈ ℤ"],"B"]
+];
+
+const RAW_UNION = [
+  ["UNI001","union of sets in roster form","Given sets A = {1, 2} and B = {2, 3, 4}, then A ∪ B =（　　）",["A. {2}","B. {1, 2, 3, 4}","C. {1, 3, 4}","D. {1, 2, 3}"],"B"],
+  ["UNI002","union of sets in roster form","Given sets A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, then A ∪ B =（　　）",["A. {3, 4}","B. {1, 2, 3, 4, 5, 6}","C. {1, 2, 5, 6}","D. {1, 2, 3, 4, 5}"],"B"],
+  ["UNI003","membership of elements in a union","Given sets A={-1,0,1} and B={0,1,2}, which of the following relations is correct?（　　）",["A. -1 ∉ A ∪ B","B. 2 ∈ A ∪ B","C. 3 ∈ A ∪ B","D. {0,1} ∈ A ∪ B"],"B"],
+  ["UNI004","union of sets in roster form","Given sets A = {2, 4} and B = {0, 2, 4}, then A ∪ B =（　　）",["A. {2, 4}","B. {0}","C. {0, 2, 4}","D. {0, 2}"],"C"],
+  ["UNI005","union of sets in roster form","Given sets A = {1, 3} and B = {2, 4}, then A ∪ B = （　　）",["A. {1, 2, 3, 4}","B. {1, 3}","C. {2, 4}","D. ∅"],"A"],
+  ["UNI006","union of sets in roster form","Given sets A = {a, b, c} and B = {b, c, d}, then A ∪ B = （　　）",["A. {b, c}","B. {a, b, c, d}","C. {a, d}","D. {a, b, c, b, c, d}"],"B"],
+  ["UNI007","union of sets in set-builder notation","Given sets A={x ∈ ℕ | 1 < x < 5} and B={2,4,6}, then A ∪ B=（　　）",["A. {2,4}","B. {2,3,4,6}","C. {2,3,4,5,6}","D. {1,2,3,4,6}"],"B"],
+  ["UNI008","number of elements in a union","Given sets A={1,2,3} and B={3,4,5,6}, the number of elements in the set A ∪ B is（　　）",["A. 4","B. 5","C. 6","D. 7"],"C"],
+  ["UNI009","union of sets in roster form","Given sets A = {1, 2} and B = {2, 3}, which of the following relations is correct?（　　）",["A. 2 ∉ A ∪ B","B. 3 ∈ A ∪ B","C. {1} ∈ A ∪ B","D. A ∪ B ⊆ {2, 3}"],"B"],
+  ["UNI010","union of sets in roster form","Given sets A = {1, 2, 4} and B = {2, 3, 4}, then A ∪ B =（　　）",["A. {2, 4}","B. {1, 2, 3, 4}","C. {1, 3}","D. {1, 2, 2, 3, 4, 4}"],"B"],
+  ["UNI011","union of sets in roster form","Given sets M = {0, 1, 2} and N = {2, 3}, then M ∪ N = （　　）",["A. {0, 1, 2, 3}","B. {0, 1, 3}","C. {2}","D. {0, 1, 2}"],"A"],
+  ["UNI012","union of sets in roster form","Given sets A = {1, 2} and B = {2}, then A ∪ B = （　　）",["A. {1, 2}","B. {2}","C. 2","D. {1}"],"A"],
+  ["UNI013","union of sets in roster form","Given sets A = {1, 2, 3} and B = {3, 2, 1}, then A ∪ B =（　　）",["A. {1, 2, 3}","B. {1, 2}","C. {2, 3}","D. ∅"],"A"],
+  ["UNI014","union of sets in roster form","Given sets A = {1, 3} and B = {2, 3}, which of the following relations is correct?（　　）",["A. A ∪ B = {3}","B. A ∪ B = {1, 2, 3, 3}","C. A ⊆ (A ∪ B)","D. (A ∪ B) ⊆ B"],"C"],
+  ["UNI015","union of sets in set-builder notation","Given sets A={x ∈ ℕ | x < 3} and B={3,4}, then A ∪ B=（　　）",["A. {0,1,2,3,4}","B. {1,2,3,4}","C. {0,1,2}","D. {3,4}"],"A"],
+  ["UNI016","union of sets in set-builder notation","Given sets A={x ∈ ℤ | -2 < x ≤ 1} and B={1,2}, then A ∪ B=（　　）",["A. {-1,0,1,2}","B. {1}","C. {-1,0,1}","D. {-2,-1,0,1,2}"],"A"],
+  ["UNI017","union of sets in set-builder notation","Given sets A = {x ∈ ℤ | x is even, 0 < x ≤ 6} and B = {x ∈ ℤ | 1 ≤ x < 4}, then A ∪ B =（　　）",["A. {1, 2, 3, 4, 6}","B. {2}","C. {1, 2, 3, 4, 5, 6}","D. {1, 2, 3, 4}"],"A"],
+  ["UNI018","union of sets in set-builder notation","Given sets A = {x ∈ ℤ | x = 2k, 0 < x < 5, k ∈ ℤ} and B = {x ∈ ℤ | 0 < x < 3}, then A ∪ B =（　　）",["A. {2}","B. {1, 2, 4}","C. {1, 2}","D. {2, 4}"],"B"],
+  ["UNI019","union of sets in set-builder notation","Given sets A = {x ∈ ℤ | x ≥ 1} and B = {0}, then A ∪ B = （　　）",["A. ∅","B. {0}","C. ℕ","D. ℤ"],"C"],
+  ["UNI020","union of sets in set-builder notation","Given sets A = {x ∈ ℤ | -1 ≤ x < 1} and B = {x ∈ ℤ | 0 ≤ x ≤ 1}, then A ∪ B =（　　）",["A. {0}","B. {-1, 0, 1}","C. {-1, 1}","D. {-1, 0, 1, 2}"],"B"],
+  ["UNI021","union of sets in set-builder notation","Given sets A = {x ∈ ℤ | -2 < x < 2} and B = {x ∈ ℕ | x ≤ 3}, the number of elements in the set A ∪ B is（　　）",["A. 2","B. 4","C. 5","D. 7"],"C"],
+  ["UNI022","union of sets in set-builder notation","Given sets A = {x ∈ ℕ | x ≤ 2} and B = {1, 3, 5}, then A ∪ B =（　　）",["A. {1}","B. {0, 1, 2, 3, 5}","C. {1, 2, 3, 5}","D. {0, 1, 3, 5}"],"B"],
+  ["UNI023","union of intervals","Let A = {x | -1 ≤ x ≤ 2} and B = {x | 0 < x < 4}, then A ∪ B = （　　）",["A. {x | 0 < x ≤ 2}","B. {x | -1 ≤ x < 4}","C. {x | -1 < x < 4}","D. {x | -1 ≤ x ≤ 4}"],"B"],
+  ["UNI024","union of intervals","Given sets A = {x | 2 < x ≤ 5} and B = {x | 2 ≤ x < 4}, then A ∪ B =（　　）",["A. {x | 2 ≤ x ≤ 5}","B. {x | 2 < x < 4}","C. {x | 2 < x ≤ 5}","D. {x | 2 ≤ x < 4}"],"A"],
+  ["UNI025","union of intervals","Given sets A={x | -2 ≤ x ≤ 1} and B={x | -4 < x < -1}, then A ∪ B=（　　）",["A. {x | -4 < x ≤ 1}","B. {x | -2 ≤ x < -1}","C. {x | -4 ≤ x ≤ 1}","D. {x | -4 < x < 1}"],"A"],
+  ["UNI026","union of intervals","Given sets A = (-∞, 2] and B = (0, 4), then A ∪ B =（　　）",["A. (0, 2]","B. (-∞, 4)","C. (-∞, 4]","D. (0, 4)"],"B"],
+  ["UNI027","union of intervals","Given sets A = {x | 1 < x < 2} and B = {x | 3 ≤ x ≤ 4}, then A ∪ B =（　　）",["A. {x | 1 < x ≤ 4}","B. {x | 1 < x < 2 or 3 ≤ x ≤ 4}","C. {x | 2 ≤ x < 3}","D. ∅"],"B"],
+  ["UNI028","union of intervals","Let A = {x | 1 ≤ x ≤ 3} and B = {x | 3 ≤ x ≤ 6}, then A ∪ B =（　　）",["A. {x | 1 ≤ x ≤ 6}","B. {x | 1 ≤ x < 6}","C. {x | 1 < x ≤ 6}","D. {3}"],"A"],
+  ["UNI029","union of intervals","Given sets A = {x | 1 < x < 2} and B = {x | 2 < x < 3}, then A ∪ B = （　　）",["A. {x | 1 < x < 3}","B. {x | 1 < x < 2 or 2 < x < 3}","C. {x | 1 < x < 2 and 2 < x < 3}","D. {x | 1 ≤ x ≤ 3}"],"B"],
+  ["UNI030","union of intervals","Given sets A = {x | -3 < x ≤ 1} and B = {x | -1 ≤ x < 4}, which of the following numbers belongs to A ∪ B?（　　）",["A. -4","B. -3","C. 2","D. 4"],"C"],
+  ["UNI031","union of intervals","Given sets A = {x | 1 ≤ x < 4} and B = {x | 2 < x ≤ 5}, then A ∪ B =（　　）",["A. {x | 1 ≤ x ≤ 5}","B. {x | 1 < x < 5}","C. {x | 2 < x < 4}","D. {x | 1 ≤ x < 5}"],"A"],
+  ["UNI032","union of intervals","Given sets A = {x | -2 ≤ x ≤ 4} and B = {x | -1 < x < 3}, then A ∪ B =（　　）",["A. {x | -1 < x < 3}","B. {x | -2 ≤ x ≤ 4}","C. {x | -2 < x < 4}","D. {x | -1 ≤ x ≤ 3}"],"B"],
+  ["UNI033","union of intervals","Given sets A = {x | -2 ≤ x ≤ 2} and B = {x | 0 < x ≤ 4}, then A ∪ B =（　　）",["A. {x | 0 < x ≤ 2}","B. {x | -2 ≤ x ≤ 4}","C. {x | -2 < x < 4}","D. {x | -2 ≤ x < 4}"],"B"],
+  ["UNI034","union of intervals","Given sets A = {x | 1 < x < 3} and B = {x | 4 < x < 6}, then A ∪ B =（　　）",["A. {x | 1 < x < 6}","B. {x | 1 < x < 3 or 4 < x < 6}","C. {x | 1 ≤ x ≤ 3 or 4 ≤ x ≤ 6}","D. ∅"],"B"],
+  ["UNI035","union of solution sets of inequalities","Given sets A = {x | x ≤ 2} and B = {x | x ≤ 5}, then A ∪ B =（　　）",["A. {x | x ≤ 2}","B. {x | x ≤ 5}","C. {x | x ≤ 7}","D. {x | x ≥ 5}"],"B"],
+  ["UNI036","union of solution sets of inequalities","Given sets A = {x | x ≤ 2} and B = {x | x > -1}, then A ∪ B =（　　）",["A. ℝ","B. {x | -1 < x ≤ 2}","C. {x | x ≤ 2}","D. {x | x > -1}"],"A"],
+  ["UNI037","union of solution sets of inequalities","Given sets A = {x | x ≥ 2} and B = {x | x² + 1 < 0}, then A ∪ B = （　　）",["A. {x | x ≥ 2}","B. {x | x > 2}","C. ∅","D. ℝ"],"A"],
+  ["UNI038","union of solution sets of inequalities","Given sets A = {x | x - 1 ≥ 0} and B = (-2, 2), then A ∪ B =（　　）",["A. (-2, +∞)","B. [1, 2)","C. [-2, +∞)","D. [1, +∞)"],"A"],
+  ["UNI039","union of solution sets of inequalities","Given sets A = {x | -2 < x < 1} and B = {x | 0 ≤ x ≤ 3}, then A ∪ B =（　　）",["A. {x | 0 ≤ x < 1}","B. {x | -2 < x ≤ 3}","C. {x | -2 < x < 3}","D. {x | -2 ≤ x ≤ 3}"],"B"],
+  ["UNI040","union of solution sets of inequalities","Given sets A = {x | -3 < x < 3} and B = {x | 0 ≤ x ≤ 5}, then A ∪ B = （　　）",["A. {x | 0 ≤ x < 3}","B. {x | -3 < x ≤ 5}","C. {x | -3 < x < 5}","D. {x | 0 < x < 3}"],"B"],
+  ["UNI041","basic properties of union","For any two sets A and B, which of the following equalities always holds?（　　）",["A. A ∪ B = B ∪ A","B. A ∪ B = A","C. A ∪ B = B","D. A ∪ B = ∅"],"A"],
+  ["UNI042","basic properties of union","For any set A, which of the following equalities always holds?（　　）",["A. A ∪ A=A","B. A ∪ A=∅","C. A ∪ A={A}","D. A ∪ A=2A"],"A"],
+  ["UNI043","basic properties of union","Given set A={1, 2}, then A ∪ ∅ =（　　）",["A. {1, 2}","B. ∅","C. {0}","D. {1, 2, 0}"],"A"],
+  ["UNI044","basic properties of union","Let U be the universal set. If set A ⊆ U, then U ∪ A equals（　　）",["A. U","B. A","C. ∅","D. {A}"],"A"],
+  ["UNI045","basic properties of union","If sets A ⊆ B, which of the following conclusions is correct?（　　）",["A. A ∪ B = A","B. A ∪ B = B","C. A ∪ B = ∅","D. A ∪ B ⊊ B"],"B"],
+  ["UNI046","basic properties of union","Given the universal set U = {1, 2, 3, 4, 5} and set A = {x ∈ ℕ | 1 ≤ x ≤ 2}, if A ∪ B = U, then set B can be（　　）",["A. {3, 4, 5}","B. {1, 2}","C. {1, 3, 4}","D. {2, 4, 5}"],"A"],
+  ["UNI047","number of elements in a union of sets in set-builder notation","Given sets A={x ∈ ℤ | -1 ≤ x ≤ 1} and B={1,2}, the number of elements in the set A ∪ B is（　　）",["A. 3","B. 4","C. 5","D. 6"],"B"],
+  ["UNI048","number of elements in a union","Given sets A = {1, 2} and B = {a}, if 3 ∈ A ∪ B and the number of elements of A ∪ B is 3, then the value of a is（　　）",["A. 1","B. 2","C. 3","D. 4"],"C"],
+  ["UNI049","number of elements in a union","Given sets A={a,b,c} and B={b,c,d,e}, the number of elements in the set A ∪ B is（　　）",["A. 3","B. 4","C. 6","D. 5"],"D"],
+  ["UNI050","number of elements in a union","Given sets A = {1, 2} and B = {a, 3}. If the number of elements of A ∪ B is 3, then the value of a can be （　　）",["A. 1","B. 0","C. 4","D. 5"],"A"]
+];
+
+const RAW_IP = [
+  ["IP001","transitivity of inequalities","Given real numbers a, b, c satisfying a > b and b > c, which of the following conclusions always holds? (　　)",["A. a > c","B. a + c < 2b","C. a = c","D. a − c < 0"],"A"],
+  ["IP002","transitivity of inequalities","Given real numbers a, b, c satisfying a<b<c, which of the following inequalities always holds? (　　)",["A. a+c>2b","B. a−c<0","C. ac<bc","D. a÷c<b÷c"],"B"],
+  ["IP003","transitivity of inequalities","If real numbers a, b, c satisfy a ≤ b and b < c, which of the following conclusions is correct? (　　)",["A. a = c","B. a > c","C. a < c","D. a ≥ c"],"C"],
+  ["IP004","transitivity of inequalities","Let a, b, c be real numbers. Among the following statements about the transitivity of inequalities, the incorrect one is (　　)",["A. If a > b and b > c, then a > c","B. If a < b and b < c, then a < c","C. If a ≥ b and b > c, then a > c","D. If a > b and a > c, then b > c"],"D"],
+  ["IP005","transitivity of inequalities","If real numbers a, b, c, d satisfy a > b and c > d, which of the following inequalities always holds? (　　)",["A. a + c > b + d","B. a − c > b − d","C. ac > bd","D. a + d > b + c"],"A"],
+  ["IP006","transitivity of inequalities","Given real numbers a, b, c, d satisfying a > b and c < d, which of the following inequalities always holds? (　　)",["A. a − c < b − d","B. a − c > b − d","C. a + c > b + d","D. a − d > b − c"],"B"],
+  ["IP007","transitivity of inequalities","Given integers a, b, c whose corresponding points on the number line are arranged from left to right, which of the following inequalities holds? (　　)",["A. a > c","B. a − b > 0","C. a < c","D. b − c > 0"],"C"],
+  ["IP008","transitivity of inequalities","Given a real number x satisfying −1 < x and x < 2, which of the following relations is correct? (　　)",["A. x < −1 < 2","B. −1 < 2 < x","C. 2 < x < −1","D. −1 < x < 2"],"D"],
+  ["IP009","transitivity of inequalities","If real numbers a, b, c, d satisfy a>b and c>d, the relationship between a−c and b−d is (　　)",["A. Cannot be determined","B. a−c>b−d","C. a−c<b−d","D. a−c=b−d"],"A"],
+  ["IP010","transitivity of inequalities","Given real numbers a, b, c satisfying a − 1 ≥ b and b > c − 1, which of the following conclusions always holds? (　　)",["A. a < c","B. a > c","C. a = c","D. a ≤ c"],"B"],
+  ["IP011","adding/subtracting the same number","Given 5 > 3, if −2 is added to both sides of this inequality, which of the following transformations is correct? (　　)",["A. 5 + (−2) < 3 + (−2)","B. 5 + (−2) = 3 + (−2)","C. 5 + (−2) > 3 + (−2)","D. 5 + (−2) > 3"],"C"],
+  ["IP012","adding/subtracting the same number","Given 8 > 5, according to the basic properties of inequalities, which of the following inequalities holds? (　　)",["A. 8 − 3 < 5 − 3","B. 8 − 3 = 5 − 3","C. 8 − 3 ≤ 5 − 3","D. 8 − 3 > 5 − 3"],"D"],
+  ["IP013","adding/subtracting the same number","Given real numbers a, b, c, if a < b, which of the following inequalities always holds? (　　)",["A. a + c < b + c","B. a + c > b + c","C. a + c = b + c","D. a + c ≥ b + c"],"A"],
+  ["IP014","adding/subtracting the same number","If a−(c−1)<b−(c−1), which of the following inequalities always holds? (　　)",["A. a>b","B. a<b","C. a=b","D. a≥b"],"B"],
+  ["IP015","adding/subtracting the same number","If a > b, which of the following inequalities always holds? (　　)",["A. a + 2026 < b + 2026","B. a − 2026 < b − 2026","C. a + 2026 > b + 2026","D. a − 2026 = b − 2026"],"C"],
+  ["IP016","adding/subtracting the same number","Given real numbers a, b satisfying a<b, which of the following inequalities always holds? (　　)",["A. −2a+3<−2b+3","B. a÷2+1>b÷2+1","C. 1−a<1−b","D. 2a−3<2b−3"],"D"],
+  ["IP017","adding/subtracting the same number","Given a = −2 and b = −3, the relationship between a + 5 and b + 5 is (　　)",["A. a + 5 > b + 5","B. a + 5 < b + 5","C. a + 5 = b + 5","D. a + 5 ≤ b + 5"],"A"],
+  ["IP018","adding/subtracting the same number","Given real numbers a, b, c, d satisfying a>b and c<d, which of the following inequalities always holds? (　　)",["A. a+c>b+d","B. a+d>b+c","C. a−c<b−d","D. a−d<b−c"],"B"],
+  ["IP019","adding/subtracting the same number","Let a, b, c be real numbers. Among the following propositions on the properties of inequalities, the incorrect one is (　　)",["A. If a > b, then a + c > b + c","B. If a < b, then a + c < b + c","C. If a < b, then a − c > b − c","D. If a > b, then a − c > b − c"],"C"],
+  ["IP020","adding/subtracting the same number","If a > b + 1 and c > d − 1, which of the following inequalities always holds? (　　)",["A. a + c < b + d","B. a − c > b − d","C. a − c < b − d","D. a + c > b + d"],"D"],
+  ["IP021","multiplying/dividing by a positive number","If a < b, which of the following inequalities holds? (　　)",["A. 2a < 2b","B. 2a > 2b","C. a + 2 > b + 2","D. a − 2 > b − 2"],"A"],
+  ["IP022","multiplying/dividing by a positive number","If 12 > 6, according to the basic properties of inequalities, dividing both sides of the inequality by 3 gives which of the following inequalities? (　　)",["A. 12 ÷ 3 < 6 ÷ 3","B. 12 ÷ 3 > 6 ÷ 3","C. 12 ÷ 3 = 6 ÷ 3","D. 12 ÷ 3 ≤ 6 ÷ 3"],"B"],
+  ["IP023","multiplying/dividing by a positive number","If a > b and k > 0, which of the following inequalities holds? (　　)",["A. ka < kb","B. a + k < b + k","C. ka > kb","D. a − k < b − k"],"C"],
+  ["IP024","multiplying/dividing by a positive number","Which of the following propositions is correct? (　　)",["A. If a > b, then a − c < b − c","B. If a > b, then ac > bc","C. If a > b and c < 0, then ac > bc","D. If a > b and c > 0, then ac > bc"],"D"],
+  ["IP025","multiplying/dividing by a positive number","Given 12 > 8, according to the properties of inequalities, which of the following transformations is correct? (　　)",["A. 12 × 3 > 8 × 3","B. 12 × 2 < 8 × 2","C. 12 ÷ 4 < 8 ÷ 4","D. 12 × (−2) > 8 × (−2)"],"A"],
+  ["IP026","multiplying/dividing by a positive number","If 0 < a < b, which of the following inequalities is correct? (　　)",["A. 2a > 2b","B. 2a < 2b","C. a ÷ 2 > b ÷ 2","D. −2a < −2b"],"B"],
+  ["IP027","multiplying/dividing by a positive number","If a ≤ b, which of the following conclusions is correct? (　　)",["A. a ÷ 4 ≥ b ÷ 4","B. a ÷ 4 < b ÷ 4","C. a ÷ 4 ≤ b ÷ 4","D. a ÷ 4 > b ÷ 4"],"C"],
+  ["IP028","multiplying/dividing by a positive number","If 3a > 3b, which of the following inequalities holds? (　　)",["A. a < b","B. a = b","C. a ≤ b","D. a > b"],"D"],
+  ["IP029","multiplying/dividing by a positive number","Given c > 0, which of the following inequality transformations is correct? (　　)",["A. If a × c > b × c, then a ÷ c > b ÷ c","B. If a > b, then a × c < b × c","C. If a < b, then a ÷ c > b ÷ c","D. If a ÷ c < b ÷ c, then a × c > b × c"],"A"],
+  ["IP030","multiplying/dividing by a positive number","If real numbers a, b satisfy a > b and b > 2, which of the following inequalities always holds? (　　)",["A. 3a < 6","B. 3a > 6","C. a + 2 ≤ 4","D. a − 2 < 0"],"B"],
+  ["IP031","multiplying/dividing by a negative number","If a > b, which of the following inequalities holds? (　　)",["A. −3a > −3b","B. −3a = −3b","C. −3a < −3b","D. −3a ≥ −3b"],"C"],
+  ["IP032","multiplying/dividing by a negative number","If both sides of the inequality −8 < 12 are divided by −4, the resulting correct inequality is (　　)",["A. 2 < −3","B. −2 < −3","C. −2 > 3","D. 2 > −3"],"D"],
+  ["IP033","multiplying/dividing by a negative number","If real numbers a, b satisfy a > b and k < 0, which of the following inequalities always holds? (　　)",["A. ka < kb","B. ka > kb","C. ka = kb","D. ka ≥ kb"],"A"],
+  ["IP034","multiplying/dividing by a negative number","Among the following statements on the properties of inequalities, the correct one is (　　)",["A. If a > b, then a × c < b × c","B. If a > b and c < 0, then a × c < b × c","C. If a > b, then a ÷ c < b ÷ c","D. If a > b and c < 0, then a − c < b − c"],"B"],
+  ["IP035","multiplying/dividing by a negative number","Given 3 > −2, which of the following inequality transformations is correct? (　　)",["A. 3 × (−2) > (−2) × (−2)","B. 3 ÷ (−1) > (−2) ÷ (−1)","C. 3 × (−2) < (−2) × (−2)","D. 3 ÷ (−1) = (−2) ÷ (−1)"],"C"],
+  ["IP036","multiplying/dividing by a negative number","If real numbers a, b satisfy a < b, which of the following inequalities holds? (　　)",["A. −a < −b","B. −a = −b","C. a > b","D. −a > −b"],"D"],
+  ["IP037","multiplying/dividing by a negative number","If real numbers a, b satisfy a ≤ b, which of the following inequalities always holds? (　　)",["A. −2a ≥ −2b","B. −2a ≤ −2b","C. −2a < −2b","D. −2a > −2b"],"A"],
+  ["IP038","multiplying/dividing by a negative number","If −2a < −2b, which of the following inequalities holds? (　　)",["A. a < b","B. a > b","C. a = b","D. a ≤ b"],"B"],
+  ["IP039","multiplying/dividing by a negative number","Given a real number c < 0, the inequality a > b is equivalent to (　　)",["A. a × c > b × c","B. a + c < b + c","C. a ÷ c < b ÷ c","D. a − c < b − c"],"C"],
+  ["IP040","multiplying/dividing by a negative number","If real numbers a, b, c satisfy a < b and b < c, which of the following inequalities always holds? (　　)",["A. −3a < −3c","B. a + 1 > c + 1","C. a − 1 > c − 1","D. −3a > −3c"],"D"],
+  ["IP041","reciprocal comparison","If real numbers a, b satisfy 0 < a < b, which of the following inequalities holds? (　　)",["A. 1 ÷ a > 1 ÷ b","B. 1 ÷ a < 1 ÷ b","C. a ÷ b > 1","D. a − b > 0"],"A"],
+  ["IP042","reciprocal comparison","Given real numbers a = −1/2 and b = −1/4, which of the following inequalities is correct? (　　)",["A. 1/a < 1/b","B. 1/a > 1/b","C. 1/a + 1/b > 0","D. 1/a × 1/b < 0"],"B"],
+  ["IP043","reciprocal comparison","Given a real number a satisfying 0 < a < 1, which of the following conclusions is correct? (　　)",["A. a > 1/a","B. a = 1/a","C. a < 1/a","D. 1/a < 0"],"C"],
+  ["IP044","reciprocal comparison","If a real number a satisfies −1 < a < 0, which of the following inequalities is correct? (　　)",["A. a < 1/a","B. a = 1/a","C. a + 1/a > 0","D. a > 1/a"],"D"],
+  ["IP045","reciprocal comparison","Among the following statements about the magnitude relationship between reciprocals of real numbers, the incorrect one is (　　)",["A. If a > b, then 1÷a < 1÷b","B. If a > b > 0, then 1÷a < 1÷b","C. If b < a < 0, then 1÷a < 1÷b","D. If a > b and ab > 0, then 1÷a < 1÷b"],"A"],
+  ["IP046","basic applications of inequalities","Given real numbers a, b satisfying a > b and c > 0, which of the following inequalities always holds? (　　)",["A. ac < bc","B. ac > bc","C. a − c < b − c","D. ac ≤ bc"],"B"],
+  ["IP047","basic applications of inequalities","Given real numbers a, b, c satisfying a > b and c < 0, which of the following inequalities always holds? (　　)",["A. a + c < b + c","B. ac > bc","C. ac < bc","D. a − c < b − c"],"C"],
+  ["IP048","basic applications of inequalities","If a<b, which of the following inequalities always holds? (　　)",["A. 3−2a<3−2b","B. a+4>b+4","C. a÷2>b÷2","D. 3−2a>3−2b"],"D"],
+  ["IP049","basic applications of inequalities","Given that a, b are two numbers in the set of rational numbers ℚ satisfying a < b, which of the following conclusions is correct? (　　)",["A. a + 1/2 < b + 1/2","B. a − 1/2 > b − 1/2","C. 1/2 × a > 1/2 × b","D. −1/2 × a < −1/2 × b"],"A"],
+  ["IP050","basic applications of inequalities","If real numbers a, b, c satisfy a < b, which of the following inequalities always holds? (　　)",["A. ac < bc","B. c − a > c − b","C. a + c > b + c","D. 1 ÷ a < 1 ÷ b"],"B"]
+];
+
+const RAW_QI = [
+  ["QI001","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² − 4x + 3 > 0 is（　　）",["A. (−∞,1)∪(3,+∞)","B. (1,3)","C. (−∞,−3)∪(−1,+∞)","D. (−∞,1]∪[3,+∞)"],"A"],
+  ["QI002","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² − x − 2 < 0 is（　　）",["A. (−∞,−1)∪(2,+∞)","B. (−1,2)","C. [−1,2]","D. (−2,1)"],"B"],
+  ["QI003","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x² + 2x + 3 > 0 is（　　）",["A. (−∞,−1)∪(3,+∞)","B. [−1,3]","C. (−1,3)","D. (−∞,−3)∪(1,+∞)"],"C"],
+  ["QI004","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x² + 2x + 8 < 0 is（　　）",["A. (−2,4)","B. (−∞,−4)∪(2,+∞)","C. (−4,2)","D. (−∞,−2)∪(4,+∞)"],"D"],
+  ["QI005","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x²−5x+6≥0 is（　　）",["A. (−∞,2]∪[3,+∞)","B. [2,3]","C. (−∞,2)∪(3,+∞)","D. (−∞,−3]∪[−2,+∞)"],"A"],
+  ["QI006","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x²+x−6≤0 is（　　）",["A. (−∞,−3]∪[2,+∞)","B. [−3,2]","C. (−3,2)","D. [−2,3]"],"B"],
+  ["QI007","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x²+3x+4≥0 is（　　）",["A. (−∞,−1]∪[4,+∞)","B. [−4,1]","C. [−1,4]","D. (−∞,−4]∪[1,+∞)"],"C"],
+  ["QI008","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x² + x + 2 ≤ 0 is（　　）",["A. [−1, 2]","B. (−∞, −2] ∪ [1, +∞)","C. (−∞, −1) ∪ (2, +∞)","D. (−∞, −1] ∪ [2, +∞)"],"D"],
+  ["QI009","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² + 3x − 4 < 0 is（　　）",["A. (−4,1)","B. (−∞,−4)∪(1,+∞)","C. [−4,1]","D. (−1,4)"],"A"],
+  ["QI010","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x² + x + 6 > 0 is（　　）",["A. (−∞, −2) ∪ (3, +∞)","B. (−2, 3)","C. (−3, 2)","D. (−∞, −3) ∪ (2, +∞)"],"B"],
+  ["QI011","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x²+3x−10≥0 is（　　）",["A. [−5,2]","B. (−5,2)","C. (−∞,−5]∪[2,+∞)","D. (−∞,−5)∪(2,+∞)"],"C"],
+  ["QI012","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² − 7x + 6 < 0 is（　　）",["A. (−∞,1)∪(6,+∞)","B. (−6,−1)","C. [1,6]","D. (1,6)"],"D"],
+  ["QI013","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality 2x²+8x−10<0 is（　　）",["A. (−5,1)","B. (−∞,−5)∪(1,+∞)","C. [−5,1]","D. (−1,5)"],"A"],
+  ["QI014","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x²+5x−4>0 is（　　）",["A. (−∞,1)∪(4,+∞)","B. (1,4)","C. [1,4]","D. (−4,−1)"],"B"],
+  ["QI015","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² − 2x < 8 is（　　）",["A. (−∞,−2)∪(4,+∞)","B. (−4,2)","C. (−2,4)","D. [−2,4]"],"C"],
+  ["QI016","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² − 2x ≥ 3 is（　　）",["A. [−1, 3]","B. (−1, 3)","C. (−∞, −1) ∪ (3, +∞)","D. (−∞, −1] ∪ [3, +∞)"],"D"],
+  ["QI017","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality (x−2)²≤9 is（　　）",["A. [−1,5]","B. (−1,5)","C. (−∞,−1]∪[5,+∞)","D. ∅"],"A"],
+  ["QI018","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x²−4x+5>0 is（　　）",["A. ∅","B. ℝ","C. (−∞,2)∪(2,+∞)","D. (2,+∞)"],"B"],
+  ["QI019","Solution Set of a Quadratic Inequality in One Variable","The solution set of the quadratic inequality in one variable x² − 2x + 1 > 0 is（　　）",["A. ℝ","B. ∅","C. (−∞,1)∪(1,+∞)","D. (1,+∞)"],"C"],
+  ["QI020","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² − 6x + 9 < 0 is（　　）",["A. {3}","B. (−∞, 3) ∪ (3, +∞)","C. ℝ","D. ∅"],"D"],
+  ["QI021","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x²+4x+4≥0 is（　　）",["A. ℝ","B. {−2}","C. (−∞,−2)∪(−2,+∞)","D. ∅"],"A"],
+  ["QI022","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x² − 6x + 9 ≤ 0 is（　　）",["A. ∅","B. {3}","C. ℝ","D. (−∞,3]"],"B"],
+  ["QI023","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x²−6x+10>0 is（　　）",["A. ∅","B. (−∞,3)∪(3,+∞)","C. ℝ","D. (3,+∞)"],"C"],
+  ["QI024","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality x²+2x+2≤0 is（　　）",["A. ℝ","B. [−2,0]","C. (−∞,−2]∪[0,+∞)","D. ∅"],"D"],
+  ["QI025","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x²+x−1<0 is（　　）",["A. ℝ","B. ∅","C. (0,1)","D. (−∞,0)∪(1,+∞)"],"A"],
+  ["QI026","Solution Set of a Quadratic Inequality in One Variable","The solution set of the inequality −x²+4x−5≥0 is（　　）",["A. ℝ","B. ∅","C. [−5,1]","D. (−∞,−5]∪[1,+∞)"],"B"],
+  ["QI027","Quadratic Function and the Solution Set of an Inequality","Given that the x-coordinates of the two intersection points of the graph of the quadratic function y = x² + bx + c with the x-axis are −1 and 2 respectively, then the solution set of the inequality x² + bx + c > 0 is（　　）",["A. (−1, 2)","B. (−∞, −2) ∪ (1, +∞)","C. (−∞, −1) ∪ (2, +∞)","D. [−1, 2]"],"C"],
+  ["QI028","Quadratic Function and the Solution Set of an Inequality","Given that the graph of the quadratic function y = f(x) opens upward and the x-coordinates of its two intersection points with the x-axis are 1 and 4 respectively, then the solution set of the inequality f(x) ≤ 0 is（　　）",["A. (1,4)","B. (−∞,1]∪[4,+∞)","C. (−∞,1)∪(4,+∞)","D. [1,4]"],"D"],
+  ["QI029","Quadratic Function and the Solution Set of an Inequality","Given that the solution set of a quadratic inequality in one variable is (2,5), then the inequality can be（　　）",["A. x² − 7x + 10 < 0","B. x² − 7x + 10 > 0","C. x² + 7x + 10 < 0","D. x² − 7x + 10 ≤ 0"],"A"],
+  ["QI030","Quadratic Function and the Solution Set of an Inequality","If the solution set of the quadratic inequality in one variable ax² + bx + c > 0 with respect to x is (−2, 3), then the graph of the quadratic function y = ax² + bx + c（　　）",["A. opens upward","B. opens downward","C. has no intersection with the x-axis","D. has exactly one intersection with the x-axis"],"B"],
+  ["QI031","Quadratic Function and the Solution Set of an Inequality","Given that the solution set of the inequality x² − x − 6 < 0 is (−2, 3), then the solution set of the inequality x² − x − 6 ≤ 0 is（　　）",["A. (−2, 3)","B. (−∞, −2) ∪ (3, +∞)","C. [−2, 3]","D. (−∞, −2] ∪ [3, +∞)"],"C"],
+  ["QI032","Quadratic Function and the Solution Set of an Inequality","Given that the x-coordinates of the intersection points of the graph of the quadratic function y=x²−7x+10 with the x-axis are 2 and 5, then the solution set of x²−7x+10<0 is（　　）",["A. (−∞,2)∪(5,+∞)","B. [2,5]","C. ∅","D. (2,5)"],"D"],
+  ["QI033","Quadratic Function and the Solution Set of an Inequality","Given the quadratic function f(x) = x² − x − 2, then the solution set of the inequality f(x) > 0 is（　　）",["A. (−∞,−1)∪(2,+∞)","B. (−1,2)","C. (−∞,−1]∪[2,+∞)","D. (−∞,−2)∪(1,+∞)"],"A"],
+  ["QI034","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality (x+2)(x−4)≥0 is（　　）",["A. [−2,4]","B. (−∞,−2]∪[4,+∞)","C. (−2,4)","D. (−∞,−2)∪(4,+∞)"],"B"],
+  ["QI035","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality x²−5x+6<0 is（　　）",["A. (−∞,2)∪(3,+∞)","B. [2,3]","C. (2,3)","D. (1,6)"],"C"],
+  ["QI036","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality 2x² − 5x + 2 ≤ 0 is（　　）",["A. (−∞,1/2]∪[2,+∞)","B. (1/2,2)","C. (−∞,1/2)∪(2,+∞)","D. [1/2,2]"],"D"],
+  ["QI037","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality −x² + x + 2 ≥ 0 is（　　）",["A. [−1,2]","B. (−1,2)","C. (−∞,−1]∪[2,+∞)","D. (−∞,−1)∪(2,+∞)"],"A"],
+  ["QI038","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality x² − 3x − 4 < 0 is（　　）",["A. (−∞,−1)∪(4,+∞)","B. (−1,4)","C. [−1,4]","D. (−4,1)"],"B"],
+  ["QI039","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality x² − 2x + 2 < 0 is（　　）",["A. ℝ","B. (−∞,1)","C. ∅","D. (1,+∞)"],"C"],
+  ["QI040","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality x² − 2x + 2 > 0 is（　　）",["A. ∅","B. (0, 2)","C. (−∞, 0) ∪ (2, +∞)","D. ℝ"],"D"],
+  ["QI041","Quadratic Function and the Solution Set of an Inequality","Given that the minimum value of the quadratic function y=x²+4x+4 is 0, then the solution set of the inequality x²+4x+4>0 is（　　）",["A. (−∞,−2)∪(−2,+∞)","B. ℝ","C. ∅","D. [−2,+∞)"],"A"],
+  ["QI042","Quadratic Function and the Solution Set of an Inequality","Given the quadratic function f(x) = −(x − 2)² + 1, then the solution set of the inequality f(x) ≥ 0 is（　　）",["A. (1, 3)","B. [1, 3]","C. (−∞, 1] ∪ [3, +∞)","D. ∅"],"B"],
+  ["QI043","Quadratic Function and the Solution Set of an Inequality","Given the quadratic function f(x) = x² − 2x, then the solution set of the inequality f(x) < 8 is（　　）",["A. [−2,4]","B. (−∞,−2)∪(4,+∞)","C. (−2,4)","D. (−4,2)"],"C"],
+  ["QI044","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality 6 − x − x² ≥ 0 is（　　）",["A. (−∞,−3]∪[2,+∞)","B. (−3,2)","C. [−2,3]","D. [−3,2]"],"D"],
+  ["QI045","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality 2x² − 5x − 3 ≤ 0 is（　　）",["A. [−1/2, 3]","B. (−∞, −1/2] ∪ [3, +∞)","C. [−3, 1/2]","D. (−1/2, 3)"],"A"],
+  ["QI046","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality 2x² + 3x − 2 < 0 is（　　）",["A. (−∞,−2)∪(1/2,+∞)","B. (−2,1/2)","C. [−2,1/2]","D. (−∞,−2]∪[1/2,+∞)"],"B"],
+  ["QI047","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality 2x² − 4x − 6 ≥ 0 is（　　）",["A. [−1,3]","B. (−1,3)","C. (−∞,−1]∪[3,+∞)","D. (−∞,−1)∪(3,+∞)"],"C"],
+  ["QI048","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality −2x² + 4x + 6 > 0 is（　　）",["A. (−∞, −1) ∪ (3, +∞)","B. (−3, 1)","C. [−1, 3]","D. (−1, 3)"],"D"],
+  ["QI049","Quadratic Function and the Solution Set of an Inequality","Given that the solution set of the quadratic inequality in one variable x² − 4x + 3 < 0 is (1, 3), then which of the following statements is false?（　　）",["A. The solution set of the inequality x² − 4x + 3 ≥ 0 is (−∞, 1) ∪ (3, +∞)","B. The solution set of the inequality x² − 4x + 3 ≤ 0 is [1, 3]","C. The solution set of the inequality x² − 4x + 3 > 0 is (−∞, 1) ∪ (3, +∞)","D. The solution set of the inequality −x² + 4x − 3 > 0 is (1, 3)"],"A"],
+  ["QI050","Quadratic Function and the Solution Set of an Inequality","The solution set of the inequality x(x − 3) ≤ 4 is（　　）",["A. (−∞, −1] ∪ [4, +∞)","B. [−1, 4]","C. [−4, 1]","D. (−1, 4)"],"B"]
+];
+
+const RAW_RIN = [
+  ["RIN001","Solution set of a fractional inequality","The solution set of the inequality （x − 3）÷（x + 4）≥ 0 is（　　）",["A. （−4，3）","B. （−∞，−4]∪[3，+∞）","C. （−∞，−4）∪[3，+∞）","D. （−∞，−4）∪（3，+∞）"],"C"],
+  ["RIN002","Solution set of a fractional inequality","The solution set of the inequality （x + 6）÷（x − 5）≥ 0 is（　　）",["A. （−∞，−6]∪（5，+∞）","B. [−6，5）","C. （−∞，−6）∪（5，+∞）","D. （−∞，−6]∪[5，+∞）"],"A"],
+  ["RIN003","Solution set of a fractional inequality","The solution set of the inequality （x + 1）÷（x − 3）≤ 0 is（　　）",["A. （−∞，−1]∪（3，+∞）","B. （−1，3）","C. [−1，3]","D. [−1，3）"],"D"],
+  ["RIN004","Solution set of a fractional inequality","The solution set of the inequality （x − 4）÷（x + 2）≤ 0 is（　　）",["A. （−∞，−2）∪[4，+∞）","B. （−2，4]","C. （−2，4）","D. [−2，4]"],"B"],
+  ["RIN005","Solution set of a fractional inequality","The solution set of the inequality （x − 7）÷（x − 1）＞0 is（　　）",["A. （−∞，1）∪（7，+∞）","B. （1，7）","C. （−∞，1]∪[7，+∞）","D. （−∞，7）"],"A"],
+  ["RIN006","Solution set of a fractional inequality","The solution set of the inequality （x + 8）÷（x + 3）＞0 is（　　）",["A. （−8，−3）","B. （−∞，−8]∪[−3，+∞）","C. （−∞，−8）∪（−3，+∞）","D. （−∞，−3）∪（−8，+∞）"],"C"],
+  ["RIN007","Solution set of a fractional inequality","The solution set of the inequality （x − 6）÷（x + 5）＜0 is（　　）",["A. （−∞，−5）∪（6，+∞）","B. （−5，6）","C. [−5，6)","D. [−5，6]"],"B"],
+  ["RIN008","Solution set of a fractional inequality","The solution set of the inequality （x + 5）÷（x − 2）＜0 is（　　）",["A. （−∞，−5）∪（2，+∞）","B. [−5，2）","C. （−5，2]","D. （−5，2）"],"D"],
+  ["RIN009","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality 3x÷（x − 5）＜1 is（　　）",["A. （−5/2，5）","B. （−∞，−5/2）∪（5，+∞）","C. [−5/2，5）","D. （−5/2，5]"],"A"],
+  ["RIN010","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality 5x÷（x − 2）＜1 is（　　）",["A. （−∞，−1/2）∪（2，+∞）","B. [−1/2，2）","C. （−1/2，2）","D. （−1/2，2]"],"C"],
+  ["RIN011","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality 6x÷（x − 6）＞2 is（　　）",["A. （−3，6）","B. （−∞，−3]∪[6，+∞）","C. （−∞，6）","D. （−∞，−3）∪（6，+∞）"],"D"],
+  ["RIN012","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality 3x÷（x − 4）＞2 is（　　）",["A. （−8，4）","B. （−∞，−8）∪（4，+∞）","C. （−∞，−8]∪[4，+∞）","D. （−∞，4）"],"B"],
+  ["RIN013","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （2x + 3）÷（x − 6）≤ 1 is（　　）",["A. （−∞，−9]∪（6，+∞）","B. （−9，6）","C. [−9，6）","D. [−9，6]"],"C"],
+  ["RIN014","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （4x − 1）÷（x − 4）≤ 1 is（　　）",["A. [−1，4）","B. （−∞，−1]∪（4，+∞）","C. （−1，4）","D. [−1，4]"],"A"],
+  ["RIN015","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （3x − 2）÷（x − 4）≥ 2 is（　　）",["A. （−6，4）","B. （−∞，−6）∪（4，+∞）","C. （−∞，−6]∪[4，+∞）","D. （−∞，−6]∪（4，+∞）"],"D"],
+  ["RIN016","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （4x − 3）÷（x − 3）≥ 2 is（　　）",["A. （−3/2，3）","B. （−∞，−3/2]∪（3，+∞）","C. （−∞，−3/2）∪（3，+∞）","D. （−∞，−3/2]∪[3，+∞）"],"B"],
+  ["RIN017","Solution set of a fractional inequality (function form)","Given R（x）＝（x − 5）÷（x − 2）, then the solution set of the inequality R（x）≤ 0 is（　　）",["A. （−∞，2）∪[5，+∞）","B. （2，5]","C. （2，5）","D. [2，5]"],"B"],
+  ["RIN018","Solution set of a fractional inequality (function form)","Given R（x）＝（x + 1）÷（x + 3）, then the solution set of the inequality R（x）≤ 0 is（　　）",["A. （−∞，−3）∪[−1，+∞）","B. （−3，−1）","C. [−3，−1]","D. （−3，−1]"],"D"],
+  ["RIN019","Solution set of a fractional inequality (function form)","Given R（x）＝（x − 6）÷（x + 2）, then the solution set of the inequality R（x）≤ 0 is（　　）",["A. （−2，6]","B. （−∞，−2）∪[6，+∞）","C. （−2，6）","D. [−2，6]"],"A"],
+  ["RIN020","Solution set of a fractional inequality (function form)","Given R（x）＝（x + 1）÷（x − 4）, then the solution set of the inequality R（x）≤ 0 is（　　）",["A. （−∞，−1]∪（4，+∞）","B. （−1，4）","C. [−1，4）","D. [−1，4]"],"C"],
+  ["RIN021","Integer solutions of a fractional inequality","Among the integer solutions of （x − 7）÷（x − 1）＜0, the greatest one is（　　）",["A. 5","B. 7","C. 1","D. 6"],"D"],
+  ["RIN022","Integer solutions of a fractional inequality","Among the integer solutions of （x + 5）÷（x − 4）＜0, the least one is（　　）",["A. −4","B. −5","C. −3","D. 0"],"A"],
+  ["RIN023","Determining solutions of a fractional inequality","Which of the following numbers is a solution of the inequality （x + 4）÷（2x − 3）≥ 0 ?（　　）",["A. −3","B. 0","C. −4","D. 1"],"C"],
+  ["RIN024","Determining solutions of a fractional inequality","Which of the following numbers is a solution of the inequality （x − 5）÷（3x + 4）≥ 0 ?（　　）",["A. −1","B. −2","C. 0","D. 4"],"B"],
+  ["RIN025","Integer solutions of a fractional inequality","Among the integer solutions of the inequality （x + 32）÷（x + 6）≥ 3, the least one is（　　）",["A. −5","B. −6","C. 6","D. 7"],"A"],
+  ["RIN026","Integer solutions of a fractional inequality","The number of integer solutions of the inequality （x + 68）÷（x + 8）≥ 5 is（　　）",["A. 14","B. 16","C. 17","D. 15"],"D"],
+  ["RIN027","Domain and sign of a fraction","The solution set of the inequality 1÷（x − 3）＞0 is（　　）",["A. （−∞，3）","B. [3，+∞）","C. （3，+∞）","D. （−∞，3）∪（3，+∞）"],"C"],
+  ["RIN028","Domain and sign of a fraction","The solution set of the inequality −2÷（x + 1）≤ 0 is（　　）",["A. （−∞，−1）","B. （−1，+∞）","C. [−1，+∞）","D. （−∞，−1）∪（−1，+∞）"],"B"],
+  ["RIN029","Domain and sign of a fraction","The solution set of the inequality 4÷（2 − x）＜0 is（　　）",["A. （−∞，2）","B. [2，+∞）","C. （−∞，2）∪（2，+∞）","D. （2，+∞）"],"D"],
+  ["RIN030","Domain and sign of a fraction","The solution set of the inequality −5÷（x − 4）＞0 is（　　）",["A. （−∞，4）","B. （4，+∞）","C. （−∞，4]","D. （−∞，4）∪（4，+∞）"],"A"],
+  ["RIN031","Solution set of a fractional inequality","The solution set of the inequality （x − 2）÷（x + 1）≥ 0 is（　　）",["A. （−1，2）","B. （−∞，−1）∪[2，+∞）","C. （−∞，−1]∪[2，+∞）","D. （−∞，−1）∪（2，+∞）"],"B"],
+  ["RIN032","Solution set of a fractional inequality","The solution set of the inequality （x + 3）÷（x − 5）≥ 0 is（　　）",["A. （−3，5）","B. （−∞，−3）∪（5，+∞）","C. （−∞，−3]∪（5，+∞）","D. （−∞，−3]∪[5，+∞）"],"C"],
+  ["RIN033","Solution set of a fractional inequality","The solution set of the inequality （x + 2）÷（x − 4）≤ 0 is（　　）",["A. （−∞，−2]∪（4，+∞）","B. （−2，4）","C. [−2，4]","D. [−2，4）"],"D"],
+  ["RIN034","Solution set of a fractional inequality","The solution set of the inequality （x − 6）÷（x − 1）≤ 0 is（　　）",["A. （1，6]","B. （−∞，1）∪[6，+∞）","C. （1，6）","D. [1，6]"],"A"],
+  ["RIN035","Solution set of a fractional inequality","The solution set of the inequality （x + 1）÷（x + 4）＞0 is（　　）",["A. （−4，−1）","B. （−∞，−4]∪[−1，+∞）","C. （−∞，−4）∪（−1，+∞）","D. （−∞，−1）∪（−4，+∞）"],"C"],
+  ["RIN036","Solution set of a fractional inequality","The solution set of the inequality （x − 4）÷（x + 2）＞0 is（　　）",["A. （−2，4）","B. （−∞，−2）∪（4，+∞）","C. （−∞，−2]∪[4，+∞）","D. （−∞，4）"],"B"],
+  ["RIN037","Solution set of a fractional inequality (negative sign in the denominator)","The solution set of the inequality （x − 3）÷（2 − x）＜0 is（　　）",["A. （−∞，2）∪（3，+∞）","B. （2，3）","C. （−∞，2]∪[3，+∞）","D. （−∞，3）"],"A"],
+  ["RIN038","Solution set of a fractional inequality (negative sign in the denominator)","The solution set of the inequality （2 − x）÷（x + 3）≤ 0 is（　　）",["A. （−3，2）","B. （−∞，−3]∪[2，+∞）","C. （−∞，2]","D. （−∞，−3）∪[2，+∞）"],"D"],
+  ["RIN039","Solution set of a fractional inequality (negative sign in the denominator)","The solution set of the inequality （x + 5）÷（1 − x）＞0 is（　　）",["A. （−∞，−5）∪（1，+∞）","B. （−5，1）","C. [−5，1）","D. （−5，1]"],"B"],
+  ["RIN040","Solution set of a fractional inequality (negative sign in the denominator)","The solution set of the inequality （4 − x）÷（x − 2）≥ 0 is（　　）",["A. （−∞，2）∪[4，+∞）","B. （2，4）","C. （2，4]","D. [2，4]"],"C"],
+  ["RIN041","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality 2x÷（x + 1）≤ 1 is（　　）",["A. （−∞，−1）∪[1，+∞）","B. （−1，1）","C. [−1，1]","D. （−1，1]"],"D"],
+  ["RIN042","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （x − 2）÷（x + 3）＞1 is（　　）",["A. （−∞，−3）","B. （−3，+∞）","C. （−∞，−3]","D. （−∞，−3）∪（−3，+∞）"],"A"],
+  ["RIN043","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （x + 1）÷（x − 2）≤ 2 is（　　）",["A. （2，5）","B. （−∞，2）∪[5，+∞）","C. （−∞，2]∪[5，+∞）","D. （−∞，5]"],"B"],
+  ["RIN044","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （2x + 1）÷（x + 2）≥ 2 is（　　）",["A. （−2，+∞）","B. （−∞，−2]","C. （−∞，−2）","D. （−∞，−2）∪（−2，+∞）"],"C"],
+  ["RIN045","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （3x − 6）÷（x − 1）＜3 is（　　）",["A. （1，+∞）","B. （−∞，1）","C. [1，+∞）","D. （−∞，1）∪（1，+∞）"],"A"],
+  ["RIN046","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （x − 4）÷（x + 2）≥1 is（　　）",["A. （−2，+∞）","B. （−∞，−2]","C. （−∞，−2）∪（−2，+∞）","D. （−∞，−2）"],"D"],
+  ["RIN047","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （x + 3）÷（x − 1）＞−1 is（　　）",["A. （−1，1）","B. （−∞，−1]∪[1，+∞）","C. （−∞，−1）∪（1，+∞）","D. （−∞，1）"],"C"],
+  ["RIN048","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality 2÷（x − 4）≥ −1 is（　　）",["A. （2，4）","B. （−∞，2]∪（4，+∞）","C. （−∞，2）∪（4，+∞）","D. （−∞，2]∪[4，+∞）"],"B"],
+  ["RIN049","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （x − 1）÷（x + 2）＜1 is（　　）",["A. （−2，+∞）","B. （−∞，−2）","C. [−2，+∞）","D. （−∞，−2）∪（−2，+∞）"],"A"],
+  ["RIN050","Solution set of a fractional inequality (right-hand side a constant)","The solution set of the inequality （2x + 4）÷（x − 3）≤ 2 is（　　）",["A. （3，+∞）","B. （−∞，3]","C. （−∞，3）∪（3，+∞）","D. （−∞，3）"],"D"]
+];
+
+/* Rehydrate into Application Data */
+const parseRaw = arr => arr.map(([id, kp, q, options, ans]) => ({id, kp, q, options, ans}));
 const DATA = {
-  // Topic 1: Concepts and Basic Relations of Sets (50 Questions)
-  sets_concepts: [
-    {id:"SC001", kp:"Definition of a Set and Elements", q:"Given the set A = {0, 1, 2, 3}, which of the following relations is correct?", options:["A. -1 ∈ A","B. 0 ∉ A","C. 2 ∈ A","D. {1} ∈ A"], ans:"C"},
-    {id:"SC002", kp:"Representation of a Set", q:"Given the set A = {x ∈ ℕ | x² + x - 2 = 0}, which of the following is the roster form of A?", options:["A. {-2, 1}","B. {1}","C. {1, 2}","D. ∅"], ans:"B"},
-    {id:"SC003", kp:"Representation of a Set", q:"Given the set M = {2, 4, 6, 8}, which of the following sets represents the same set as M?", options:["A. {x ∈ ℕ⁺ | x < 8}","B. {x | x = 2n, n ∈ {1, 2, 3, 4}}","C. {x | x is a positive divisor of 8}","D. {x ∈ ℤ | 0 < x ≤ 8}"], ans:"B"},
-    {id:"SC004", kp:"Distinctness of Elements in a Set", q:"Given A = {1, 2, 2, 3} and B = {3, 2, 1}, which statement is correct?", options:["A. Set A has 4 elements","B. Sets A and B represent the same set","C. The elements of B must be arranged in ascending order","D. A and {1, 2, 3, 4} represent the same set"], ans:"B"},
-    {id:"SC005", kp:"Relationship Between Elements and Sets", q:"Given A = {0, 1}, which relation is correct?", options:["A. 0 ⊆ A","B. {1} ∈ A","C. {0} ⊆ A","D. {0, 1} ∈ A"], ans:"C"},
-    {id:"SC006", kp:"Definition of a Set and Elements", q:"Given A = {x | x² - 3x + 2 = 0}, which conclusion is correct?", options:["A. 0 ∈ A","B. 1 ∉ A","C. 2 ∈ A","D. 3 ∈ A"], ans:"C"},
-    {id:"SC007", kp:"Number of Elements in a Set", q:"If A = {x | x² + 2x - 3 = 0}, how many elements does A contain?", options:["A. 0","B. 1","C. 2","D. 3"], ans:"C"},
-    {id:"SC008", kp:"Number of Elements in a Set", q:"Given A = {1, 2, 2, 3}, how many elements does A contain?", options:["A. 2","B. 3","C. 4","D. 5"], ans:"B"},
-    {id:"SC009", kp:"Representation of a Set", q:"Which is the roster form of A = {x ∈ ℤ | |x| ≤ 2}?", options:["A. {-2, -1, 0, 1, 2}","B. {-2, -1, 1, 2}","C. {-1, 0, 1}","D. {0, 1, 2}"], ans:"A"},
-    {id:"SC010", kp:"Representation of a Set", q:"Given M = {x ∈ ℤ | 6/x ∈ ℤ}, which of the following belongs to M?", options:["A. 0","B. 4","C. 5","D. 6"], ans:"D"},
-    {id:"SC011", kp:"Common Number Sets and Membership", q:"Which statement about common number sets and their relationships is correct?", options:["A. 0 ∉ ℕ","B. ℤ ⊆ ℕ","C. ℚ ⊆ ℝ","D. ℝ ⊆ ℤ"], ans:"C"},
-    {id:"SC012", kp:"Common Number Sets and Membership", q:"Let ℚ be the set of rational numbers. Which of the following belongs to ℚ?", options:["A. π","B. √2","C. 3.14","D. √3"], ans:"C"},
-    {id:"SC013", kp:"Representation of a Set", q:"The set A is represented by the interval (-2, 1]. Which set-builder notation correctly represents A?", options:["A. {x | -2 < x < 1}","B. {x | -2 ≤ x ≤ 1}","C. {x | -2 < x ≤ 1}","D. {x | -2 ≤ x < 1}"], ans:"C"},
-    {id:"SC014", kp:"Representation of a Set", q:"Let A be the set of all real numbers x for which 1/(x+2) is defined. Which set-builder notation correctly represents A?", options:["A. {x | x ≠ 2}","B. {x | x ≠ -2}","C. {x | x = -2}","D. {x | x ≠ 0}"], ans:"B"},
-    {id:"SC015", kp:"Equality of Sets", q:"Which pair of sets represents equal sets?", options:["A. {1, 2} and {(1, 2)}","B. {x | x² = 1} and {1}","C. {x | x is a positive divisor of 4} and {1, 2, 4}","D. {0} and ∅"], ans:"C"},
-    {id:"SC016", kp:"Equality of Sets", q:"Given A = {1, 2, a} and B = {2, 1, 3}. If A = B, what is the value of the real number a?", options:["A. 1","B. 2","C. 3","D. 4"], ans:"C"},
-    {id:"SC017", kp:"Equality of Sets", q:"Given A = {1, a} and B = {1, 3}. If A = B, what is the value of the real number a?", options:["A. 1","B. 2","C. 3","D. 4"], ans:"C"},
-    {id:"SC018", kp:"Empty Set", q:"Which of the following represents the empty set?", options:["A. {0}","B. {x ∈ ℕ | x < 0}","C. {x | x² = 1}","D. {1}"], ans:"B"},
-    {id:"SC019", kp:"Empty Set and Set Relations", q:"Which relation is correct?", options:["A. 0 ∈ ∅","B. ∅ ∈ {0}","C. ∅ ⊆ {0}","D. {0} ⊆ ∅"], ans:"C"},
-    {id:"SC020", kp:"Empty Set and Set Relations", q:"Given A = {0, 1}, which relation is correct?", options:["A. ∅ ∈ A","B. {0} ∈ A","C. ∅ ⊆ A","D. A ⊆ ∅"], ans:"C"},
-    {id:"SC021", kp:"Empty Set and Set Relations", q:"For any set A, which relation is always true?", options:["A. ∅ ∈ A","B. ∅ ⊆ A","C. A ⊆ ∅","D. {∅} ⊆ A"], ans:"B"},
-    {id:"SC022", kp:"Basic Relations Between Sets", q:"Given A = {2, 4, 6} and B = {2, 4, 6, 8}, which relation is correct?", options:["A. A ∈ B","B. A ⊊ B","C. B ⊊ A","D. A = B"], ans:"B"},
-    {id:"SC023", kp:"Basic Relations Between Sets", q:"Given M = {x | x = 3k, k ∈ ℤ} and N = {x | x = 6k, k ∈ ℤ}, what is the relationship between M and N?", options:["A. M ⊊ N","B. N ⊊ M","C. M = N","D. M ∈ N"], ans:"B"},
-    {id:"SC024", kp:"Basic Relations Between Sets", q:"Given A = {1, 2} and B = {1, 2, 3}, which relation is correct?", options:["A. A ∈ B","B. A ⊆ B","C. B ⊆ A","D. A = B"], ans:"B"},
-    {id:"SC025", kp:"Basic Relations Between Sets", q:"Given A = {x ∈ ℤ | -1 ≤ x ≤ 1} and B = {-1, 0, 1}, which statement is correct?", options:["A. A ⊊ B","B. B ⊊ A","C. A = B","D. A ∈ B"], ans:"C"},
-    {id:"SC026", kp:"Subsets", q:"Given A = {1, 2}, how many subsets does A have?", options:["A. 2","B. 3","C. 4","D. 8"], ans:"C"},
-    {id:"SC027", kp:"Proper Subsets", q:"Given M = {a, b, c}, how many proper subsets does M have?", options:["A. 3","B. 7","C. 8","D. 15"], ans:"B"},
-    {id:"SC028", kp:"Proper Subsets", q:"Given A = {-2, -1, 0, 1, 2}, how many proper subsets does A have?", options:["A. 30","B. 31","C. 32","D. 33"], ans:"B"},
-    {id:"SC029", kp:"Proper Subsets", q:"If a finite set has 31 proper subsets, how many elements does the set contain?", options:["A. 4","B. 5","C. 31","D. 32"], ans:"B"},
-    {id:"SC030", kp:"Subsets and the Empty Set", q:"Given A = {x | x² - 1 = 0}, which relation between the empty set ∅ and A is correct?", options:["A. ∅ ∈ A","B. ∅ ⊊ A","C. A ⊆ ∅","D. A = ∅"], ans:"B"},
-    {id:"SC031", kp:"Listing Subsets", q:"Given A = {x ∈ ℤ | 0 ≤ x < 3}, which of the following is a subset of A?", options:["A. {-1, 1}","B. {0, 1}","C. {1, 2, 3}","D. {0, 1, 2, 3}"], ans:"B"},
-    {id:"SC032", kp:"Subsets and Elements", q:"Given A = {1, 2}, which relation is correct?", options:["A. 1 ∈ A","B. {1} ∈ A","C. 2 ⊆ A","D. {1, 2} ∈ A"], ans:"A"},
-    {id:"SC033", kp:"Number of Subsets", q:"Given A = {a, b, c, d, e}, how many subsets does A have?", options:["A. 16","B. 25","C. 32","D. 64"], ans:"C"},
-    {id:"SC034", kp:"Proper Subsets", q:"Given A = {1, 2, 3, 4}, how many proper subsets does A have?", options:["A. 14","B. 15","C. 16","D. 17"], ans:"B"},
-    {id:"SC035", kp:"Non-empty Subsets", q:"Given A = {0, 1, 2}, how many non-empty subsets does A have?", options:["A. 6","B. 7","C. 8","D. 9"], ans:"B"},
-    {id:"SC036", kp:"Number of Subsets", q:"Given A = {x ∈ ℕ | x < 5}, how many 2-element subsets does A have?", options:["A. 6","B. 10","C. 15","D. 32"], ans:"B"},
-    {id:"SC037", kp:"Number of Subsets", q:"If set A has 32 subsets in total, how many elements does A contain?", options:["A. 4","B. 5","C. 16","D. 32"], ans:"B"},
-    {id:"SC038", kp:"Proper Subsets", q:"Given A = {x | x ∈ ℤ, 1 ≤ x ≤ n}. If A has 31 proper subsets, what is the value of the positive integer n?", options:["A. 4","B. 5","C. 6","D. 31"], ans:"B"},
-    {id:"SC039", kp:"Subset Relations", q:"Given A = {2, a} and B = {1, 2, 3}. If A ⊆ B and a > 2, what is the value of a?", options:["A. 1","B. 2","C. 3","D. 4"], ans:"C"},
-    {id:"SC040", kp:"Proper Subsets", q:"Given A = {1, 2} and B = {1, 2, 3}, which relation is correct?", options:["A. A ∈ B","B. A ⊊ B","C. B ⊆ A","D. A = B"], ans:"B"},
-    {id:"SC041", kp:"Number of Elements in a Set", q:"Given A = {x ∈ ℤ | x² ≤ 5}, how many elements does A contain?", options:["A. 2","B. 3","C. 4","D. 5"], ans:"D"},
-    {id:"SC042", kp:"Number of Elements in a Set", q:"Given A = {x ∈ ℤ | x² = 1}, how many elements does A contain?", options:["A. 0","B. 1","C. 2","D. 3"], ans:"C"},
-    {id:"SC043", kp:"Empty Set", q:"Given A = {x ∈ ℝ | x² + 1 = 0}, how many elements does A contain?", options:["A. 0","B. 1","C. 2","D. 3"], ans:"A"},
-    {id:"SC044", kp:"Number of Elements in a Set", q:"Given A = {x | (x - 2)² = 0}, how many elements does A contain?", options:["A. 0","B. 1","C. 2","D. 3"], ans:"B"},
-    {id:"SC045", kp:"Representation of a Set", q:"Which of the following set representations is written correctly?", options:["A. {x | x² - 1 = 0}","B. {x² - 1 = 0}","C. {x = 1, x = -1}","D. {the set of real numbers}"], ans:"A"},
-    {id:"SC046", kp:"Definition of a Set and Elements", q:"Which of the following collections of objects cannot form a set?", options:["A. All positive integers","B. All right triangles","C. The relatively tall students in a certain class","D. All real roots of the equation x² - 4 = 0"], ans:"C"},
-    {id:"SC047", kp:"Representation of a Set", q:"Given A = {-4, -2, 0, 2, 4} and B = {x ∈ ℤ | -4 ≤ x ≤ 4 and x is even}, which statement is correct?", options:["A. A = B","B. A ⊊ B","C. B ⊊ A","D. A ∈ B"], ans:"A"},
-    {id:"SC048", kp:"Basic Relations Between Sets", q:"Given M = {-2, 0, 2} and N = {-2, -1, 0, 1, 2}, which statement is correct?", options:["A. M ⊊ N","B. N ⊊ M","C. M = N","D. M ∈ N"], ans:"A"},
-    {id:"SC049", kp:"Number of Subsets", q:"Given A = {1, 2, 3, 4, 5, 6}, how many subsets does A have?", options:["A. 64","B. 63","C. 32","D. 31"], ans:"A"},
-    {id:"SC050", kp:"Common Number Sets and Membership", q:"Which relation is correct?", options:["A. -1 ∈ ℕ","B. 0 ∈ ℤ","C. √2 ∈ ℚ","D. 1/2 ∈ ℤ"], ans:"B"}
-  ],
-
-  // Topic 2: Union of Sets (50 Questions)
-  sets_union: [
-    {id:"UNI001", kp:"union of sets in roster form", q:"Given sets A = {1, 2} and B = {2, 3, 4}, then A ∪ B =（　　）", options:["A. {2}","B. {1, 2, 3, 4}","C. {1, 3, 4}","D. {1, 2, 3}"], ans:"B"},
-    {id:"UNI002", kp:"union of sets in roster form", q:"Given sets A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, then A ∪ B =（　　）", options:["A. {3, 4}","B. {1, 2, 3, 4, 5, 6}","C. {1, 2, 5, 6}","D. {1, 2, 3, 4, 5}"], ans:"B"},
-    {id:"UNI003", kp:"membership of elements in a union", q:"Given sets A={-1,0,1} and B={0,1,2}, which of the following relations is correct?（　　）", options:["A. -1 ∉ A ∪ B","B. 2 ∈ A ∪ B","C. 3 ∈ A ∪ B","D. {0,1} ∈ A ∪ B"], ans:"B"},
-    {id:"UNI004", kp:"union of sets in roster form", q:"Given sets A = {2, 4} and B = {0, 2, 4}, then A ∪ B =（　　）", options:["A. {2, 4}","B. {0}","C. {0, 2, 4}","D. {0, 2}"], ans:"C"},
-    {id:"UNI005", kp:"union of sets in roster form", q:"Given sets A = {1, 3} and B = {2, 4}, then A ∪ B = （　　）", options:["A. {1, 2, 3, 4}","B. {1, 3}","C. {2, 4}","D. ∅"], ans:"A"},
-    {id:"UNI006", kp:"union of sets in roster form", q:"Given sets A = {a, b, c} and B = {b, c, d}, then A ∪ B = （　　）", options:["A. {b, c}","B. {a, b, c, d}","C. {a, d}","D. {a, b, c, b, c, d}"], ans:"B"},
-    {id:"UNI007", kp:"union of sets in set-builder notation", q:"Given sets A={x ∈ ℕ | 1 < x < 5} and B={2,4,6}, then A ∪ B=（　　）", options:["A. {2,4}","B. {2,3,4,6}","C. {2,3,4,5,6}","D. {1,2,3,4,6}"], ans:"B"},
-    {id:"UNI008", kp:"number of elements in a union", q:"Given sets A={1,2,3} and B={3,4,5,6}, the number of elements in the set A ∪ B is（　　）", options:["A. 4","B. 5","C. 6","D. 7"], ans:"C"},
-    {id:"UNI009", kp:"union of sets in roster form", q:"Given sets A = {1, 2} and B = {2, 3}, which of the following relations is correct?（　　）", options:["A. 2 ∉ A ∪ B","B. 3 ∈ A ∪ B","C. {1} ∈ A ∪ B","D. A ∪ B ⊆ {2, 3}"], ans:"B"},
-    {id:"UNI010", kp:"union of sets in roster form", q:"Given sets A = {1, 2, 4} and B = {2, 3, 4}, then A ∪ B =（　　）", options:["A. {2, 4}","B. {1, 2, 3, 4}","C. {1, 3}","D. {1, 2, 2, 3, 4, 4}"], ans:"B"},
-    {id:"UNI011", kp:"union of sets in roster form", q:"Given sets M = {0, 1, 2} and N = {2, 3}, then M ∪ N = （　　）", options:["A. {0, 1, 2, 3}","B. {0, 1, 3}","C. {2}","D. {0, 1, 2}"], ans:"A"},
-    {id:"UNI012", kp:"union of sets in roster form", q:"Given sets A = {1, 2} and B = {2}, then A ∪ B = （　　）", options:["A. {1, 2}","B. {2}","C. 2","D. {1}"], ans:"A"},
-    {id:"UNI013", kp:"union of sets in roster form", q:"Given sets A = {1, 2, 3} and B = {3, 2, 1}, then A ∪ B =（　　）", options:["A. {1, 2, 3}","B. {1, 2}","C. {2, 3}","D. ∅"], ans:"A"},
-    {id:"UNI014", kp:"union of sets in roster form", q:"Given sets A = {1, 3} and B = {2, 3}, which of the following relations is correct?（　　）", options:["A. A ∪ B = {3}","B. A ∪ B = {1, 2, 3, 3}","C. A ⊆ (A ∪ B)","D. (A ∪ B) ⊆ B"], ans:"C"},
-    {id:"UNI015", kp:"union of sets in set-builder notation", q:"Given sets A={x ∈ ℕ | x < 3} and B={3,4}, then A ∪ B=（　　）", options:["A. {0,1,2,3,4}","B. {1,2,3,4}","C. {0,1,2}","D. {3,4}"], ans:"A"},
-    {id:"UNI016", kp:"union of sets in set-builder notation", q:"Given sets A={x ∈ ℤ | -2 < x ≤ 1} and B={1,2}, then A ∪ B=（　　）", options:["A. {-1,0,1,2}","B. {1}","C. {-1,0,1}","D. {-2,-1,0,1,2}"], ans:"A"},
-    {id:"UNI017", kp:"union of sets in set-builder notation", q:"Given sets A = {x ∈ ℤ | x is even, 0 < x ≤ 6} and B = {x ∈ ℤ | 1 ≤ x < 4}, then A ∪ B =（　　）", options:["A. {1, 2, 3, 4, 6}","B. {2}","C. {1, 2, 3, 4, 5, 6}","D. {1, 2, 3, 4}"], ans:"A"},
-    {id:"UNI018", kp:"union of sets in set-builder notation", q:"Given sets A = {x ∈ ℤ | x = 2k, 0 < x < 5, k ∈ ℤ} and B = {x ∈ ℤ | 0 < x < 3}, then A ∪ B =（　　）", options:["A. {2}","B. {1, 2, 4}","C. {1, 2}","D. {2, 4}"], ans:"B"},
-    {id:"UNI019", kp:"union of sets in set-builder notation", q:"Given sets A = {x ∈ ℤ | x ≥ 1} and B = {0}, then A ∪ B = （　　）", options:["A. ∅","B. {0}","C. ℕ","D. ℤ"], ans:"C"},
-    {id:"UNI020", kp:"union of sets in set-builder notation", q:"Given sets A = {x ∈ ℤ | -1 ≤ x < 1} and B = {x ∈ ℤ | 0 ≤ x ≤ 1}, then A ∪ B =（　　）", options:["A. {0}","B. {-1, 0, 1}","C. {-1, 1}","D. {-1, 0, 1, 2}"], ans:"B"},
-    {id:"UNI021", kp:"union of sets in set-builder notation", q:"Given sets A = {x ∈ ℤ | -2 < x < 2} and B = {x ∈ ℕ | x ≤ 3}, the number of elements in the set A ∪ B is（　　）", options:["A. 2","B. 4","C. 5","D. 7"], ans:"C"},
-    {id:"UNI022", kp:"union of sets in set-builder notation", q:"Given sets A = {x ∈ ℕ | x ≤ 2} and B = {1, 3, 5}, then A ∪ B =（　　）", options:["A. {1}","B. {0, 1, 2, 3, 5}","C. {1, 2, 3, 5}","D. {0, 1, 3, 5}"], ans:"B"},
-    {id:"UNI023", kp:"union of intervals", q:"Let A = {x | -1 ≤ x ≤ 2} and B = {x | 0 < x < 4}, then A ∪ B = （　　）", options:["A. {x | 0 < x ≤ 2}","B. {x | -1 ≤ x < 4}","C. {x | -1 < x < 4}","D. {x | -1 ≤ x ≤ 4}"], ans:"B"},
-    {id:"UNI024", kp:"union of intervals", q:"Given sets A = {x | 2 < x ≤ 5} and B = {x | 2 ≤ x < 4}, then A ∪ B =（　　）", options:["A. {x | 2 ≤ x ≤ 5}","B. {x | 2 < x < 4}","C. {x | 2 < x ≤ 5}","D. {x | 2 ≤ x < 4}"], ans:"A"},
-    {id:"UNI025", kp:"union of intervals", q:"Given sets A={x | -2 ≤ x ≤ 1} and B={x | -4 < x < -1}, then A ∪ B=（　　）", options:["A. {x | -4 < x ≤ 1}","B. {x | -2 ≤ x < -1}","C. {x | -4 ≤ x ≤ 1}","D. {x | -4 < x < 1}"], ans:"A"},
-    {id:"UNI026", kp:"union of intervals", q:"Given sets A = (-∞, 2] and B = (0, 4), then A ∪ B =（　　）", options:["A. (0, 2]","B. (-∞, 4)","C. (-∞, 4]","D. (0, 4)"], ans:"B"},
-    {id:"UNI027", kp:"union of intervals", q:"Given sets A = {x | 1 < x < 2} and B = {x | 3 ≤ x ≤ 4}, then A ∪ B =（　　）", options:["A. {x | 1 < x ≤ 4}","B. {x | 1 < x < 2 or 3 ≤ x ≤ 4}","C. {x | 2 ≤ x < 3}","D. ∅"], ans:"B"},
-    {id:"UNI028", kp:"union of intervals", q:"Let A = {x | 1 ≤ x ≤ 3} and B = {x | 3 ≤ x ≤ 6}, then A ∪ B =（　　）", options:["A. {x | 1 ≤ x ≤ 6}","B. {x | 1 ≤ x < 6}","C. {x | 1 < x ≤ 6}","D. {3}"], ans:"A"},
-    {id:"UNI029", kp:"union of intervals", q:"Given sets A = {x | 1 < x < 2} and B = {x | 2 < x < 3}, then A ∪ B = （　　）", options:["A. {x | 1 < x < 3}","B. {x | 1 < x < 2 or 2 < x < 3}","C. {x | 1 < x < 2 and 2 < x < 3}","D. {x | 1 ≤ x ≤ 3}"], ans:"B"},
-    {id:"UNI030", kp:"union of intervals", q:"Given sets A = {x | -3 < x ≤ 1} and B = {x | -1 ≤ x < 4}, which of the following numbers belongs to A ∪ B?（　　）", options:["A. -4","B. -3","C. 2","D. 4"], ans:"C"},
-    {id:"UNI031", kp:"union of intervals", q:"Given sets A = {x | 1 ≤ x < 4} and B = {x | 2 < x ≤ 5}, then A ∪ B =（　　）", options:["A. {x | 1 ≤ x ≤ 5}","B. {x | 1 < x < 5}","C. {x | 2 < x < 4}","D. {x | 1 ≤ x < 5}"], ans:"A"},
-    {id:"UNI032", kp:"union of intervals", q:"Given sets A = {x | -2 ≤ x ≤ 4} and B = {x | -1 < x < 3}, then A ∪ B =（　　）", options:["A. {x | -1 < x < 3}","B. {x | -2 ≤ x ≤ 4}","C. {x | -2 < x < 4}","D. {x | -1 ≤ x ≤ 3}"], ans:"B"},
-    {id:"UNI033", kp:"union of intervals", q:"Given sets A = {x | -2 ≤ x ≤ 2} and B = {x | 0 < x ≤ 4}, then A ∪ B =（　　）", options:["A. {x | 0 < x ≤ 2}","B. {x | -2 ≤ x ≤ 4}","C. {x | -2 < x < 4}","D. {x | -2 ≤ x < 4}"], ans:"B"},
-    {id:"UNI034", kp:"union of intervals", q:"Given sets A = {x | 1 < x < 3} and B = {x | 4 < x < 6}, then A ∪ B =（　　）", options:["A. {x | 1 < x < 6}","B. {x | 1 < x < 3 or 4 < x < 6}","C. {x | 1 ≤ x ≤ 3 or 4 ≤ x ≤ 6}","D. ∅"], ans:"B"},
-    {id:"UNI035", kp:"union of solution sets of inequalities", q:"Given sets A = {x | x ≤ 2} and B = {x | x ≤ 5}, then A ∪ B =（　　）", options:["A. {x | x ≤ 2}","B. {x | x ≤ 5}","C. {x | x ≤ 7}","D. {x | x ≥ 5}"], ans:"B"},
-    {id:"UNI036", kp:"union of solution sets of inequalities", q:"Given sets A = {x | x ≤ 2} and B = {x | x > -1}, then A ∪ B =（　　）", options:["A. ℝ","B. {x | -1 < x ≤ 2}","C. {x | x ≤ 2}","D. {x | x > -1}"], ans:"A"},
-    {id:"UNI037", kp:"union of solution sets of inequalities", q:"Given sets A = {x | x ≥ 2} and B = {x | x² + 1 < 0}, then A ∪ B = （　　）", options:["A. {x | x ≥ 2}","B. {x | x > 2}","C. ∅","D. ℝ"], ans:"A"},
-    {id:"UNI038", kp:"union of solution sets of inequalities", q:"Given sets A = {x | x - 1 ≥ 0} and B = (-2, 2), then A ∪ B =（　　）", options:["A. (-2, +∞)","B. [1, 2)","C. [-2, +∞)","D. [1, +∞)"], ans:"A"},
-    {id:"UNI039", kp:"union of solution sets of inequalities", q:"Given sets A = {x | -2 < x < 1} and B = {x | 0 ≤ x ≤ 3}, then A ∪ B =（　　）", options:["A. {x | 0 ≤ x < 1}","B. {x | -2 < x ≤ 3}","C. {x | -2 < x < 3}","D. {x | -2 ≤ x ≤ 3}"], ans:"B"},
-    {id:"UNI040", kp:"union of solution sets of inequalities", q:"Given sets A = {x | -3 < x < 3} and B = {x | 0 ≤ x ≤ 5}, then A ∪ B = （　　）", options:["A. {x | 0 ≤ x < 3}","B. {x | -3 < x ≤ 5}","C. {x | -3 < x < 5}","D. {x | 0 < x < 3}"], ans:"B"},
-    {id:"UNI041", kp:"basic properties of union", q:"For any two sets A and B, which of the following equalities always holds?（　　）", options:["A. A ∪ B = B ∪ A","B. A ∪ B = A","C. A ∪ B = B","D. A ∪ B = ∅"], ans:"A"},
-    {id:"UNI042", kp:"basic properties of union", q:"For any set A, which of the following equalities always holds?（　　）", options:["A. A ∪ A=A","B. A ∪ A=∅","C. A ∪ A={A}","D. A ∪ A=2A"], ans:"A"},
-    {id:"UNI043", kp:"basic properties of union", q:"Given set A={1, 2}, then A ∪ ∅ =（　　）", options:["A. {1, 2}","B. ∅","C. {0}","D. {1, 2, 0}"], ans:"A"},
-    {id:"UNI044", kp:"basic properties of union", q:"Let U be the universal set. If set A ⊆ U, then U ∪ A equals（　　）", options:["A. U","B. A","C. ∅","D. {A}"], ans:"A"},
-    {id:"UNI045", kp:"basic properties of union", q:"If sets A ⊆ B, which of the following conclusions is correct?（　　）", options:["A. A ∪ B = A","B. A ∪ B = B","C. A ∪ B = ∅","D. A ∪ B ⊊ B"], ans:"B"},
-    {id:"UNI046", kp:"basic properties of union", q:"Given the universal set U = {1, 2, 3, 4, 5} and set A = {x ∈ ℕ | 1 ≤ x ≤ 2}, if A ∪ B = U, then set B can be（　　）", options:["A. {3, 4, 5}","B. {1, 2}","C. {1, 3, 4}","D. {2, 4, 5}"], ans:"A"},
-    {id:"UNI047", kp:"number of elements in a union of sets in set-builder notation", q:"Given sets A={x ∈ ℤ | -1 ≤ x ≤ 1} and B={1,2}, the number of elements in the set A ∪ B is（　　）", options:["A. 3","B. 4","C. 5","D. 6"], ans:"B"},
-    {id:"UNI048", kp:"number of elements in a union", q:"Given sets A = {1, 2} and B = {a}, if 3 ∈ A ∪ B and the number of elements of A ∪ B is 3, then the value of a is（　　）", options:["A. 1","B. 2","C. 3","D. 4"], ans:"C"},
-    {id:"UNI049", kp:"number of elements in a union", q:"Given sets A={a,b,c} and B={b,c,d,e}, the number of elements in the set A ∪ B is（　　）", options:["A. 3","B. 4","C. 6","D. 5"], ans:"D"},
-    {id:"UNI050", kp:"number of elements in a union", q:"Given sets A = {1, 2} and B = {a, 3}. If the number of elements of A ∪ B is 3, then the value of a can be （　　）", options:["A. 1","B. 0","C. 4","D. 5"], ans:"A"}
-  ],
-
-  // Topic 3: Basic Properties of Inequalities (50 Questions)
-  ineq_properties: [
-    {id:"IP001", kp:"transitivity of inequalities", q:"Given real numbers a, b, c satisfying a > b and b > c, which of the following conclusions always holds?", options:["A. a > c","B. a + c < 2b","C. a = c","D. a − c < 0"], ans:"A"},
-    {id:"IP002", kp:"transitivity of inequalities", q:"Given real numbers a, b, c satisfying a<b<c, which of the following inequalities always holds?", options:["A. a+c>2b","B. a−c<0","C. ac<bc","D. a÷c<b÷c"], ans:"B"},
-    {id:"IP003", kp:"transitivity of inequalities", q:"If real numbers a, b, c satisfy a ≤ b and b < c, which of the following conclusions is correct?", options:["A. a = c","B. a > c","C. a < c","D. a ≥ c"], ans:"C"},
-    {id:"IP004", kp:"transitivity of inequalities", q:"Let a, b, c be real numbers. Among the following statements about the transitivity of inequalities, the incorrect one is", options:["A. If a > b and b > c, then a > c","B. If a < b and b < c, then a < c","C. If a ≥ b and b > c, then a > c","D. If a > b and a > c, then b > c"], ans:"D"},
-    {id:"IP005", kp:"transitivity of inequalities", q:"If real numbers a, b, c, d satisfy a > b and c > d, which of the following inequalities always holds?", options:["A. a + c > b + d","B. a − c > b − d","C. ac > bd","D. a + d > b + c"], ans:"A"},
-    {id:"IP006", kp:"transitivity of inequalities", q:"Given real numbers a, b, c, d satisfying a > b and c < d, which of the following inequalities always holds?", options:["A. a − c < b − d","B. a − c > b − d","C. a + c > b + d","D. a − d > b − c"], ans:"B"},
-    {id:"IP007", kp:"transitivity of inequalities", q:"Given integers a, b, c whose corresponding points on the number line are arranged from left to right, which of the following inequalities holds?", options:["A. a > c","B. a − b > 0","C. a < c","D. b − c > 0"], ans:"C"},
-    {id:"IP008", kp:"transitivity of inequalities", q:"Given a real number x satisfying −1 < x and x < 2, which of the following relations is correct?", options:["A. x < −1 < 2","B. −1 < 2 < x","C. 2 < x < −1","D. −1 < x < 2"], ans:"D"},
-    {id:"IP009", kp:"transitivity of inequalities", q:"If real numbers a, b, c, d satisfy a>b and c>d, the relationship between a−c and b−d is", options:["A. Cannot be determined","B. a−c>b−d","C. a−c<b−d","D. a−c=b−d"], ans:"A"},
-    {id:"IP010", kp:"transitivity of inequalities", q:"Given real numbers a, b, c satisfying a − 1 ≥ b and b > c − 1, which of the following conclusions always holds?", options:["A. a < c","B. a > c","C. a = c","D. a ≤ c"], ans:"B"},
-    {id:"IP011", kp:"adding/subtracting the same number", q:"Given 5 > 3, if −2 is added to both sides of this inequality, which of the following transformations is correct?", options:["A. 5 + (−2) < 3 + (−2)","B. 5 + (−2) = 3 + (−2)","C. 5 + (−2) > 3 + (−2)","D. 5 + (−2) > 3"], ans:"C"},
-    {id:"IP012", kp:"adding/subtracting the same number", q:"Given 8 > 5, according to the basic properties of inequalities, which of the following inequalities holds?", options:["A. 8 − 3 < 5 − 3","B. 8 − 3 = 5 − 3","C. 8 − 3 ≤ 5 − 3","D. 8 − 3 > 5 − 3"], ans:"D"},
-    {id:"IP013", kp:"adding/subtracting the same number", q:"Given real numbers a, b, c, if a < b, which of the following inequalities always holds?", options:["A. a + c < b + c","B. a + c > b + c","C. a + c = b + c","D. a + c ≥ b + c"], ans:"A"},
-    {id:"IP014", kp:"adding/subtracting the same number", q:"If a−(c−1)<b−(c−1), which of the following inequalities always holds?", options:["A. a>b","B. a<b","C. a=b","D. a≥b"], ans:"B"},
-    {id:"IP015", kp:"adding/subtracting the same number", q:"If a > b, which of the following inequalities always holds?", options:["A. a + 2026 < b + 2026","B. a − 2026 < b − 2026","C. a + 2026 > b + 2026","D. a − 2026 = b − 2026"], ans:"C"},
-    {id:"IP016", kp:"adding/subtracting the same number", q:"Given real numbers a, b satisfying a<b, which of the following inequalities always holds?", options:["A. −2a+3<−2b+3","B. a÷2+1>b÷2+1","C. 1−a<1−b","D. 2a−3<2b−3"], ans:"D"},
-    {id:"IP017", kp:"adding/subtracting the same number", q:"Given a = −2 and b = −3, the relationship between a + 5 and b + 5 is", options:["A. a + 5 > b + 5","B. a + 5 < b + 5","C. a + 5 = b + 5","D. a + 5 ≤ b + 5"], ans:"A"},
-    {id:"IP018", kp:"adding/subtracting the same number", q:"Given real numbers a, b, c, d satisfying a>b and c<d, which of the following inequalities always holds?", options:["A. a+c>b+d","B. a+d>b+c","C. a−c<b−d","D. a−d<b−c"], ans:"B"},
-    {id:"IP019", kp:"adding/subtracting the same number", q:"Let a, b, c be real numbers. Among the following propositions on the properties of inequalities, the incorrect one is", options:["A. If a > b, then a + c > b + c","B. If a < b, then a + c < b + c","C. If a < b, then a − c > b − c","D. If a > b, then a − c > b − c"], ans:"C"},
-    {id:"IP020", kp:"adding/subtracting the same number", q:"If a > b + 1 and c > d − 1, which of the following inequalities always holds?", options:["A. a + c < b + d","B. a − c > b − d","C. a − c < b − d","D. a + c > b + d"], ans:"D"},
-    {id:"IP021", kp:"multiplying/dividing by a positive number", q:"If a < b, which of the following inequalities holds?", options:["A. 2a < 2b","B. 2a > 2b","C. a + 2 > b + 2","D. a − 2 > b − 2"], ans:"A"},
-    {id:"IP022", kp:"multiplying/dividing by a positive number", q:"If 12 > 6, according to the basic properties of inequalities, dividing both sides of the inequality by 3 gives which of the following inequalities?", options:["A. 12 ÷ 3 < 6 ÷ 3","B. 12 ÷ 3 > 6 ÷ 3","C. 12 ÷ 3 = 6 ÷ 3","D. 12 ÷ 3 ≤ 6 ÷ 3"], ans:"B"},
-    {id:"IP023", kp:"multiplying/dividing by a positive number", q:"If a > b and k > 0, which of the following inequalities holds?", options:["A. ka < kb","B. a + k < b + k","C. ka > kb","D. a − k < b − k"], ans:"C"},
-    {id:"IP024", kp:"multiplying/dividing by a positive number", q:"Which of the following propositions is correct?", options:["A. If a > b, then a − c < b − c","B. If a > b, then ac > bc","C. If a > b and c < 0, then ac > bc","D. If a > b and c > 0, then ac > bc"], ans:"D"},
-    {id:"IP025", kp:"multiplying/dividing by a positive number", q:"Given 12 > 8, according to the properties of inequalities, which of the following transformations is correct?", options:["A. 12 × 3 > 8 × 3","B. 12 × 2 < 8 × 2","C. 12 ÷ 4 < 8 ÷ 4","D. 12 × (−2) > 8 × (−2)"], ans:"A"},
-    {id:"IP026", kp:"multiplying/dividing by a positive number", q:"If 0 < a < b, which of the following inequalities is correct?", options:["A. 2a > 2b","B. 2a < 2b","C. a ÷ 2 > b ÷ 2","D. −2a < −2b"], ans:"B"},
-    {id:"IP027", kp:"multiplying/dividing by a positive number", q:"If a ≤ b, which of the following conclusions is correct?", options:["A. a ÷ 4 ≥ b ÷ 4","B. a ÷ 4 < b ÷ 4","C. a ÷ 4 ≤ b ÷ 4","D. a ÷ 4 > b ÷ 4"], ans:"C"},
-    {id:"IP028", kp:"multiplying/dividing by a positive number", q:"If 3a > 3b, which of the following inequalities holds?", options:["A. a < b","B. a = b","C. a ≤ b","D. a > b"], ans:"D"},
-    {id:"IP029", kp:"multiplying/dividing by a positive number", q:"Given c > 0, which of the following inequality transformations is correct?", options:["A. If a × c > b × c, then a ÷ c > b ÷ c","B. If a > b, then a × c < b × c","C. If a < b, then a ÷ c > b ÷ c","D. If a ÷ c < b ÷ c, then a × c > b × c"], ans:"A"},
-    {id:"IP030", kp:"multiplying/dividing by a positive number", q:"If real numbers a, b satisfy a > b and b > 2, which of the following inequalities always holds?", options:["A. 3a < 6","B. 3a > 6","C. a + 2 ≤ 4","D. a − 2 < 0"], ans:"B"},
-    {id:"IP031", kp:"multiplying/dividing by a negative number", q:"If a > b, which of the following inequalities holds?", options:["A. −3a > −3b","B. −3a = −3b","C. −3a < −3b","D. −3a ≥ −3b"], ans:"C"},
-    {id:"IP032", kp:"multiplying/dividing by a negative number", q:"If both sides of the inequality −8 < 12 are divided by −4, the resulting correct inequality is", options:["A. 2 < −3","B. −2 < −3","C. −2 > 3","D. 2 > −3"], ans:"D"},
-    {id:"IP033", kp:"multiplying/dividing by a negative number", q:"If real numbers a, b satisfy a > b and k < 0, which of the following inequalities always holds?", options:["A. ka < kb","B. ka > kb","C. ka = kb","D. ka ≥ kb"], ans:"A"},
-    {id:"IP034", kp:"multiplying/dividing by a negative number", q:"Among the following statements on the properties of inequalities, the correct one is", options:["A. If a > b, then a × c < b × c","B. If a > b and c < 0, then a × c < b × c","C. If a > b, then a ÷ c < b ÷ c","D. If a > b and c < 0, then a − c < b − c"], ans:"B"},
-    {id:"IP035", kp:"multiplying/dividing by a negative number", q:"Given 3 > −2, which of the following inequality transformations is correct?", options:["A. 3 × (−2) > (−2) × (−2)","B. 3 ÷ (−1) > (−2) ÷ (−1)","C. 3 × (−2) < (−2) × (−2)","D. 3 ÷ (−1) = (−2) ÷ (−1)"], ans:"C"},
-    {id:"IP036", kp:"multiplying/dividing by a negative number", q:"If real numbers a, b satisfy a < b, which of the following inequalities holds?", options:["A. −a < −b","B. −a = −b","C. a > b","D. −a > −b"], ans:"D"},
-    {id:"IP037", kp:"multiplying/dividing by a negative number", q:"If real numbers a, b satisfy a ≤ b, which of the following inequalities always holds?", options:["A. −2a ≥ −2b","B. −2a ≤ −2b","C. −2a < −2b","D. −2a > −2b"], ans:"A"},
-    {id:"IP038", kp:"multiplying/dividing by a negative number", q:"If −2a < −2b, which of the following inequalities holds?", options:["A. a < b","B. a > b","C. a = b","D. a ≤ b"], ans:"B"},
-    {id:"IP039", kp:"multiplying/dividing by a negative number", q:"Given a real number c < 0, the inequality a > b is equivalent to", options:["A. a × c > b × c","B. a + c < b + c","C. a ÷ c < b ÷ c","D. a − c < b − c"], ans:"C"},
-    {id:"IP040", kp:"multiplying/dividing by a negative number", q:"If real numbers a, b, c satisfy a < b and b < c, which of the following inequalities always holds?", options:["A. −3a < −3c","B. a + 1 > c + 1","C. a − 1 > c − 1","D. −3a > −3c"], ans:"D"},
-    {id:"IP041", kp:"reciprocal comparison", q:"If real numbers a, b satisfy 0 < a < b, which of the following inequalities holds?", options:["A. 1 ÷ a > 1 ÷ b","B. 1 ÷ a < 1 ÷ b","C. a ÷ b > 1","D. a − b > 0"], ans:"A"},
-    {id:"IP042", kp:"reciprocal comparison", q:"Given real numbers a = −1/2 and b = −1/4, which of the following inequalities is correct?", options:["A. 1/a < 1/b","B. 1/a > 1/b","C. 1/a + 1/b > 0","D. 1/a × 1/b < 0"], ans:"B"},
-    {id:"IP043", kp:"reciprocal comparison", q:"Given a real number a satisfying 0 < a < 1, which of the following conclusions is correct?", options:["A. a > 1/a","B. a = 1/a","C. a < 1/a","D. 1/a < 0"], ans:"C"},
-    {id:"IP044", kp:"reciprocal comparison", q:"If a real number a satisfies −1 < a < 0, which of the following inequalities is correct?", options:["A. a < 1/a","B. a = 1/a","C. a + 1/a > 0","D. a > 1/a"], ans:"D"},
-    {id:"IP045", kp:"reciprocal comparison", q:"Among the following statements about the magnitude relationship between reciprocals of real numbers, the incorrect one is", options:["A. If a > b, then 1÷a < 1÷b","B. If a > b > 0, then 1÷a < 1÷b","C. If b < a < 0, then 1÷a < 1÷b","D. If a > b and ab > 0, then 1÷a < 1÷b"], ans:"A"},
-    {id:"IP046", kp:"basic applications of inequalities", q:"Given real numbers a, b satisfying a > b and c > 0, which of the following inequalities always holds?", options:["A. ac < bc","B. ac > bc","C. a − c < b − c","D. ac ≤ bc"], ans:"B"},
-    {id:"IP047", kp:"basic applications of inequalities", q:"Given real numbers a, b, c satisfying a > b and c < 0, which of the following inequalities always holds?", options:["A. a + c < b + c","B. ac > bc","C. ac < bc","D. a − c < b − c"], ans:"C"},
-    {id:"IP048", kp:"basic applications of inequalities", q:"If a<b, which of the following inequalities always holds?", options:["A. 3−2a<3−2b","B. a+4>b+4","C. a÷2>b÷2","D. 3−2a>3−2b"], ans:"D"},
-    {id:"IP049", kp:"basic applications of inequalities", q:"Given that a, b are two numbers in the set of rational numbers ℚ satisfying a < b, which of the following conclusions is correct?", options:["A. a + 1/2 < b + 1/2","B. a − 1/2 > b − 1/2","C. 1/2 × a > 1/2 × b","D. −1/2 × a < −1/2 × b"], ans:"A"},
-    {id:"IP050", kp:"basic applications of inequalities", q:"If real numbers a, b, c satisfy a < b, which of the following inequalities always holds?", options:["A. ac < bc","B. c − a > c − b","C. a + c > b + c","D. 1 ÷ a < 1 ÷ b"], ans:"B"}
-  ],
-
-  // Topic 4: Quadratic Inequalities in One Variable (50 Questions)
-  ineq_quadratic: [
-    {id:"QI001", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² − 4x + 3 > 0 is（　　）", options:["A. (−∞,1)∪(3,+∞)","B. (1,3)","C. (−∞,−3)∪(−1,+∞)","D. (−∞,1]∪[3,+∞)"], ans:"A"},
-    {id:"QI002", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² − x − 2 < 0 is（　　）", options:["A. (−∞,−1)∪(2,+∞)","B. (−1,2)","C. [−1,2]","D. (−2,1)"], ans:"B"},
-    {id:"QI003", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x² + 2x + 3 > 0 is（　　）", options:["A. (−∞,−1)∪(3,+∞)","B. [−1,3]","C. (−1,3)","D. (−∞,−3)∪(1,+∞)"], ans:"C"},
-    {id:"QI004", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x² + 2x + 8 < 0 is（　　）", options:["A. (−2,4)","B. (−∞,−4)∪(2,+∞)","C. (−4,2)","D. (−∞,−2)∪(4,+∞)"], ans:"D"},
-    {id:"QI005", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x²−5x+6≥0 is（　　）", options:["A. (−∞,2]∪[3,+∞)","B. [2,3]","C. (−∞,2)∪(3,+∞)","D. (−∞,−3]∪[−2,+∞)"], ans:"A"},
-    {id:"QI006", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x²+x−6≤0 is（　　）", options:["A. (−∞,−3]∪[2,+∞)","B. [−3,2]","C. (−3,2)","D. [−2,3]"], ans:"B"},
-    {id:"QI007", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x²+3x+4≥0 is（　　）", options:["A. (−∞,−1]∪[4,+∞)","B. [−4,1]","C. [−1,4]","D. (−∞,−4]∪[1,+∞)"], ans:"C"},
-    {id:"QI008", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x² + x + 2 ≤ 0 is（　　）", options:["A. [−1, 2]","B. (−∞, −2] ∪ [1, +∞)","C. (−∞, −1) ∪ (2, +∞)","D. (−∞, −1] ∪ [2, +∞)"], ans:"D"},
-    {id:"QI009", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² + 3x − 4 < 0 is（　　）", options:["A. (−4,1)","B. (−∞,−4)∪(1,+∞)","C. [−4,1]","D. (−1,4)"], ans:"A"},
-    {id:"QI010", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x² + x + 6 > 0 is（　　）", options:["A. (−∞, −2) ∪ (3, +∞)","B. (−2, 3)","C. (−3, 2)","D. (−∞, −3) ∪ (2, +∞)"], ans:"B"},
-    {id:"QI011", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x²+3x−10≥0 is（　　）", options:["A. [−5,2]","B. (−5,2)","C. (−∞,−5]∪[2,+∞)","D. (−∞,−5)∪(2,+∞)"], ans:"C"},
-    {id:"QI012", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² − 7x + 6 < 0 is（　　）", options:["A. (−∞,1)∪(6,+∞)","B. (−6,−1)","C. [1,6]","D. (1,6)"], ans:"D"},
-    {id:"QI013", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality 2x²+8x−10<0 is（　　）", options:["A. (−5,1)","B. (−∞,−5)∪(1,+∞)","C. [−5,1]","D. (−1,5)"], ans:"A"},
-    {id:"QI014", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x²+5x−4>0 is（　　）", options:["A. (−∞,1)∪(4,+∞)","B. (1,4)","C. [1,4]","D. (−4,−1)"], ans:"B"},
-    {id:"QI015", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² − 2x < 8 is（　　）", options:["A. (−∞,−2)∪(4,+∞)","B. (−4,2)","C. (−2,4)","D. [−2,4]"], ans:"C"},
-    {id:"QI016", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² − 2x ≥ 3 is（　　）", options:["A. [−1, 3]","B. (−1, 3)","C. (−∞, −1) ∪ (3, +∞)","D. (−∞, −1] ∪ [3, +∞)"], ans:"D"},
-    {id:"QI017", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality (x−2)²≤9 is（　　）", options:["A. [−1,5]","B. (−1,5)","C. (−∞,−1]∪[5,+∞)","D. ∅"], ans:"A"},
-    {id:"QI018", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x²−4x+5>0 is（　　）", options:["A. ∅","B. ℝ","C. (−∞,2)∪(2,+∞)","D. (2,+∞)"], ans:"B"},
-    {id:"QI019", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the quadratic inequality in one variable x² − 2x + 1 > 0 is（　　）", options:["A. ℝ","B. ∅","C. (−∞,1)∪(1,+∞)","D. (1,+∞)"], ans:"C"},
-    {id:"QI020", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² − 6x + 9 < 0 is（　　）", options:["A. {3}","B. (−∞, 3) ∪ (3, +∞)","C. ℝ","D. ∅"], ans:"D"},
-    {id:"QI021", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x²+4x+4≥0 is（　　）", options:["A. ℝ","B. {−2}","C. (−∞,−2)∪(−2,+∞)","D. ∅"], ans:"A"},
-    {id:"QI022", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x² − 6x + 9 ≤ 0 is（　　）", options:["A. ∅","B. {3}","C. ℝ","D. (−∞,3]"], ans:"B"},
-    {id:"QI023", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x²−6x+10>0 is（　　）", options:["A. ∅","B. (−∞,3)∪(3,+∞)","C. ℝ","D. (3,+∞)"], ans:"C"},
-    {id:"QI024", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality x²+2x+2≤0 is（　　）", options:["A. ℝ","B. [−2,0]","C. (−∞,−2]∪[0,+∞)","D. ∅"], ans:"D"},
-    {id:"QI025", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x²+x−1<0 is（　　）", options:["A. ℝ","B. ∅","C. (0,1)","D. (−∞,0)∪(1,+∞)"], ans:"A"},
-    {id:"QI026", kp:"Solution Set of a Quadratic Inequality", q:"The solution set of the inequality −x²+4x−5≥0 is（　　）", options:["A. ℝ","B. ∅","C. [−5,1]","D. (−∞,−5]∪[1,+∞)"], ans:"B"},
-    {id:"QI027", kp:"Quadratic Function and the Solution Set", q:"Given that the x-coordinates of the two intersection points of y = x² + bx + c with the x-axis are −1 and 2, then x² + bx + c > 0 is（　　）", options:["A. (−1, 2)","B. (−∞, −2) ∪ (1, +∞)","C. (−∞, −1) ∪ (2, +∞)","D. [−1, 2]"], ans:"C"},
-    {id:"QI028", kp:"Quadratic Function and the Solution Set", q:"Given y = f(x) opens upward and crosses the x-axis at 1 and 4, then the solution set of f(x) ≤ 0 is（　　）", options:["A. (1,4)","B. (−∞,1]∪[4,+∞)","C. (−∞,1)∪(4,+∞)","D. [1,4]"], ans:"D"},
-    {id:"QI029", kp:"Quadratic Function and the Solution Set", q:"Given that the solution set of a quadratic inequality in one variable is (2,5), then the inequality can be（　　）", options:["A. x² − 7x + 10 < 0","B. x² − 7x + 10 > 0","C. x² + 7x + 10 < 0","D. x² − 7x + 10 ≤ 0"], ans:"A"},
-    {id:"QI030", kp:"Quadratic Function and the Solution Set", q:"If the solution set of ax² + bx + c > 0 is (−2, 3), then the graph of y = ax² + bx + c（　　）", options:["A. opens upward","B. opens downward","C. has no intersection with the x-axis","D. has exactly one intersection with the x-axis"], ans:"B"},
-    {id:"QI031", kp:"Quadratic Function and the Solution Set", q:"Given that the solution set of x² − x − 6 < 0 is (−2, 3), then the solution set of x² − x − 6 ≤ 0 is（　　）", options:["A. (−2, 3)","B. (−∞, −2) ∪ (3, +∞)","C. [−2, 3]","D. (−∞, −2] ∪ [3, +∞)"], ans:"C"},
-    {id:"QI032", kp:"Quadratic Function and the Solution Set", q:"Given that the x-coordinates of the intersection points of y=x²−7x+10 with the x-axis are 2 and 5, then the solution set of x²−7x+10<0 is（　　）", options:["A. (−∞,2)∪(5,+∞)","B. [2,5]","C. ∅","D. (2,5)"], ans:"D"},
-    {id:"QI033", kp:"Quadratic Function and the Solution Set", q:"Given the quadratic function f(x) = x² − x − 2, then the solution set of the inequality f(x) > 0 is（　　）", options:["A. (−∞,−1)∪(2,+∞)","B. (−1,2)","C. (−∞,−1]∪[2,+∞)","D. (−∞,−2)∪(1,+∞)"], ans:"A"},
-    {id:"QI034", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality (x+2)(x−4)≥0 is（　　）", options:["A. [−2,4]","B. (−∞,−2]∪[4,+∞)","C. (−2,4)","D. (−∞,−2)∪(4,+∞)"], ans:"B"},
-    {id:"QI035", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality x²−5x+6<0 is（　　）", options:["A. (−∞,2)∪(3,+∞)","B. [2,3]","C. (2,3)","D. (1,6)"], ans:"C"},
-    {id:"QI036", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality 2x² − 5x + 2 ≤ 0 is（　　）", options:["A. (−∞,1/2]∪[2,+∞)","B. (1/2,2)","C. (−∞,1/2)∪(2,+∞)","D. [1/2,2]"], ans:"D"},
-    {id:"QI037", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality −x² + x + 2 ≥ 0 is（　　）", options:["A. [−1,2]","B. (−1,2)","C. (−∞,−1]∪[2,+∞)","D. (−∞,−1)∪(2,+∞)"], ans:"A"},
-    {id:"QI038", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality x² − 3x − 4 < 0 is（　　）", options:["A. (−∞,−1)∪(4,+∞)","B. (−1,4)","C. [−1,4]","D. (−4,1)"], ans:"B"},
-    {id:"QI039", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality x² − 2x + 2 < 0 is（　　）", options:["A. ℝ","B. (−∞,1)","C. ∅","D. (1,+∞)"], ans:"C"},
-    {id:"QI040", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality x² − 2x + 2 > 0 is（　　）", options:["A. ∅","B. (0, 2)","C. (−∞, 0) ∪ (2, +∞)","D. ℝ"], ans:"D"},
-    {id:"QI041", kp:"Quadratic Function and the Solution Set", q:"Given that the minimum value of y=x²+4x+4 is 0, then the solution set of the inequality x²+4x+4>0 is（　　）", options:["A. (−∞,−2)∪(−2,+∞)","B. ℝ","C. ∅","D. [−2,+∞)"], ans:"A"},
-    {id:"QI042", kp:"Quadratic Function and the Solution Set", q:"Given the quadratic function f(x) = −(x − 2)² + 1, then the solution set of the inequality f(x) ≥ 0 is（　　）", options:["A. (1, 3)","B. [1, 3]","C. (−∞, 1] ∪ [3, +∞)","D. ∅"], ans:"B"},
-    {id:"QI043", kp:"Quadratic Function and the Solution Set", q:"Given the quadratic function f(x) = x² − 2x, then the solution set of the inequality f(x) < 8 is（　　）", options:["A. [−2,4]","B. (−∞,−2)∪(4,+∞)","C. (−2,4)","D. (−4,2)"], ans:"C"},
-    {id:"QI044", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality 6 − x − x² ≥ 0 is（　　）", options:["A. (−∞,−3]∪[2,+∞)","B. (−3,2)","C. [−2,3]","D. [−3,2]"], ans:"D"},
-    {id:"QI045", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality 2x² − 5x − 3 ≤ 0 is（　　）", options:["A. [−1/2, 3]","B. (−∞, −1/2] ∪ [3, +∞)","C. [−3, 1/2]","D. (−1/2, 3)"], ans:"A"},
-    {id:"QI046", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality 2x² + 3x − 2 < 0 is（　　）", options:["A. (−∞,−2)∪(1/2,+∞)","B. (−2,1/2)","C. [−2,1/2]","D. (−∞,−2]∪[1/2,+∞)"], ans:"B"},
-    {id:"QI047", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality 2x² − 4x − 6 ≥ 0 is（　　）", options:["A. [−1,3]","B. (−1,3)","C. (−∞,−1]∪[3,+∞)","D. (−∞,−1)∪(3,+∞)"], ans:"C"},
-    {id:"QI048", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality −2x² + 4x + 6 > 0 is（　　）", options:["A. (−∞, −1) ∪ (3, +∞)","B. (−3, 1)","C. [−1, 3]","D. (−1, 3)"], ans:"D"},
-    {id:"QI049", kp:"Quadratic Function and the Solution Set", q:"Given that the solution set of x² − 4x + 3 < 0 is (1, 3), then which of the following statements is false?（　　）", options:["A. The solution set of x² − 4x + 3 ≥ 0 is (−∞, 1) ∪ (3, +∞)","B. The solution set of x² − 4x + 3 ≤ 0 is [1, 3]","C. The solution set of x² − 4x + 3 > 0 is (−∞, 1) ∪ (3, +∞)","D. The solution set of −x² + 4x − 3 > 0 is (1, 3)"], ans:"A"},
-    {id:"QI050", kp:"Quadratic Function and the Solution Set", q:"The solution set of the inequality x(x − 3) ≤ 4 is（　　）", options:["A. (−∞, −1] ∪ [4, +∞)","B. [−1, 4]","C. [−4, 1]","D. (−1, 4)"], ans:"B"}
-  ],
-
-  // Topic 5: Fractional Inequalities (Rational Inequalities) (50 Questions)
-  ineq_fractional: [
-    {id:"RIN001", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x − 3）÷（x + 4）≥ 0 is（　　）", options:["A. （−4，3）","B. （−∞，−4]∪[3，+∞）","C. （−∞，−4）∪[3，+∞）","D. （−∞，−4）∪（3，+∞）"], ans:"C"},
-    {id:"RIN002", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x + 6）÷（x − 5）≥ 0 is（　　）", options:["A. （−∞，−6]∪（5，+∞）","B. [−6，5）","C. （−∞，−6）∪（5，+∞）","D. （−∞，−6]∪[5，+∞）"], ans:"A"},
-    {id:"RIN003", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x + 1）÷（x − 3）≤ 0 is（　　）", options:["A. （−∞，−1]∪（3，+∞）","B. （−1，3）","C. [−1，3]","D. [−1，3）"], ans:"D"},
-    {id:"RIN004", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x − 4）÷（x + 2）≤ 0 is（　　）", options:["A. （−∞，−2）∪[4，+∞）","B. （−2，4]","C. （−2，4）","D. [−2，4]"], ans:"B"},
-    {id:"RIN005", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x − 7）÷（x − 1）＞0 is（　　）", options:["A. （−∞，1）∪（7，+∞）","B. （1，7）","C. （−∞，1]∪[7，+∞）","D. （−∞，7）"], ans:"A"},
-    {id:"RIN006", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x + 8）÷（x + 3）＞0 is（　　）", options:["A. （−8，−3）","B. （−∞，−8]∪[−3，+∞）","C. （−∞，−8）∪（−3，+∞）","D. （−∞，−3）∪（−8，+∞）"], ans:"C"},
-    {id:"RIN007", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x − 6）÷（x + 5）＜0 is（　　）", options:["A. （−∞，−5）∪（6，+∞）","B. （−5，6）","C. [−5，6)","D. [−5，6]"], ans:"B"},
-    {id:"RIN008", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x + 5）÷（x − 2）＜0 is（　　）", options:["A. （−∞，−5）∪（2，+∞）","B. [−5，2）","C. （−5，2]","D. （−5，2）"], ans:"D"},
-    {id:"RIN009", kp:"Right-hand side a constant", q:"The solution set of the inequality 3x÷（x − 5）＜1 is（　　）", options:["A. （−5/2，5）","B. （−∞，−5/2）∪（5，+∞）","C. [−5/2，5）","D. （−5/2，5]"], ans:"A"},
-    {id:"RIN010", kp:"Right-hand side a constant", q:"The solution set of the inequality 5x÷（x − 2）＜1 is（　　）", options:["A. （−∞，−1/2）∪（2，+∞）","B. [−1/2，2）","C. （−1/2，2）","D. （−1/2，2]"], ans:"C"},
-    {id:"RIN011", kp:"Right-hand side a constant", q:"The solution set of the inequality 6x÷（x − 6）＞2 is（　　）", options:["A. （−3，6）","B. （−∞，−3]∪[6，+∞）","C. （−∞，6）","D. （−∞，−3）∪（6，+∞）"], ans:"D"},
-    {id:"RIN012", kp:"Right-hand side a constant", q:"The solution set of the inequality 3x÷（x − 4）＞2 is（　　）", options:["A. （−8，4）","B. （−∞，−8）∪（4，+∞）","C. （−∞，−8]∪[4，+∞）","D. （−∞，4）"], ans:"B"},
-    {id:"RIN013", kp:"Right-hand side a constant", q:"The solution set of the inequality （2x + 3）÷（x − 6）≤ 1 is（　　）", options:["A. （−∞，−9]∪（6，+∞）","B. （−9，6）","C. [−9，6）","D. [−9，6]"], ans:"C"},
-    {id:"RIN014", kp:"Right-hand side a constant", q:"The solution set of the inequality （4x − 1）÷（x − 4）≤ 1 is（　　）", options:["A. [−1，4）","B. （−∞，−1]∪（4，+∞）","C. （−1，4）","D. [−1，4]"], ans:"A"},
-    {id:"RIN015", kp:"Right-hand side a constant", q:"The solution set of the inequality （3x − 2）÷（x − 4）≥ 2 is（　　）", options:["A. （−6，4）","B. （−∞，−6）∪（4，+∞）","C. （−∞，−6]∪[4，+∞）","D. （−∞，−6]∪（4，+∞）"], ans:"D"},
-    {id:"RIN016", kp:"Right-hand side a constant", q:"The solution set of the inequality （4x − 3）÷（x − 3）≥ 2 is（　　）", options:["A. （−3/2，3）","B. （−∞，−3/2]∪（3，+∞）","C. （−∞，−3/2）∪（3，+∞）","D. （−∞，−3/2]∪[3，+∞）"], ans:"B"},
-    {id:"RIN017", kp:"Fractional function form", q:"Given R（x）＝（x − 5）÷（x − 2）, then the solution set of R（x）≤ 0 is（　　）", options:["A. （−∞，2）∪[5，+∞）","B. （2，5]","C. （2，5）","D. [2，5]"], ans:"B"},
-    {id:"RIN018", kp:"Fractional function form", q:"Given R（x）＝（x + 1）÷（x + 3）, then the solution set of R（x）≤ 0 is（　　）", options:["A. （−∞，−3）∪[−1，+∞）","B. （−3，−1）","C. [−3，−1]","D. （−3，−1]"], ans:"D"},
-    {id:"RIN019", kp:"Fractional function form", q:"Given R（x）＝（x − 6）÷（x + 2）, then the solution set of R（x）≤ 0 is（　　）", options:["A. （−2，6]","B. （−∞，−2）∪[6，+∞）","C. （−2，6）","D. [−2，6]"], ans:"A"},
-    {id:"RIN020", kp:"Fractional function form", q:"Given R（x）＝（x + 1）÷（x − 4）, then the solution set of R（x）≤ 0 is（　　）", options:["A. （−∞，−1]∪（4，+∞）","B. （−1，4）","C. [−1，4）","D. [−1，4]"], ans:"C"},
-    {id:"RIN021", kp:"Integer solutions", q:"Among the integer solutions of （x − 7）÷（x − 1）＜0, the greatest one is（　　）", options:["A. 5","B. 7","C. 1","D. 6"], ans:"D"},
-    {id:"RIN022", kp:"Integer solutions", q:"Among the integer solutions of （x + 5）÷（x − 4）＜0, the least one is（　　）", options:["A. −4","B. −5","C. −3","D. 0"], ans:"A"},
-    {id:"RIN023", kp:"Determining solutions", q:"Which of the following numbers is a solution of the inequality （x + 4）÷（2x − 3）≥ 0 ?（　　）", options:["A. −3","B. 0","C. −4","D. 1"], ans:"C"},
-    {id:"RIN024", kp:"Determining solutions", q:"Which of the following numbers is a solution of the inequality （x − 5）÷（3x + 4）≥ 0 ?（　　）", options:["A. −1","B. −2","C. 0","D. 4"], ans:"B"},
-    {id:"RIN025", kp:"Integer solutions", q:"Among the integer solutions of the inequality （x + 32）÷（x + 6）≥ 3, the least one is（　　）", options:["A. −5","B. −6","C. 6","D. 7"], ans:"A"},
-    {id:"RIN026", kp:"Integer solutions", q:"The number of integer solutions of the inequality （x + 68）÷（x + 8）≥ 5 is（　　）", options:["A. 14","B. 16","C. 17","D. 15"], ans:"D"},
-    {id:"RIN027", kp:"Domain and sign of a fraction", q:"The solution set of the inequality 1÷（x − 3）＞0 is（　　）", options:["A. （−∞，3）","B. [3，+∞）","C. （3，+∞）","D. （−∞，3）∪（3，+∞）"], ans:"C"},
-    {id:"RIN028", kp:"Domain and sign of a fraction", q:"The solution set of the inequality −2÷（x + 1）≤ 0 is（　　）", options:["A. （−∞，−1）","B. （−1，+∞）","C. [−1，+∞）","D. （−∞，−1）∪（−1，+∞）"], ans:"B"},
-    {id:"RIN029", kp:"Domain and sign of a fraction", q:"The solution set of the inequality 4÷（2 − x）＜0 is（　　）", options:["A. （−∞，2）","B. [2，+∞）","C. （−∞，2）∪（2，+∞）","D. （2，+∞）"], ans:"D"},
-    {id:"RIN030", kp:"Domain and sign of a fraction", q:"The solution set of the inequality −5÷（x − 4）＞0 is（　　）", options:["A. （−∞，4）","B. （4，+∞）","C. （−∞，4]","D. （−∞，4）∪（4，+∞）"], ans:"A"},
-    {id:"RIN031", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x − 2）÷（x + 1）≥ 0 is（　　）", options:["A. （−1，2）","B. （−∞，−1）∪[2，+∞）","C. （−∞，−1]∪[2，+∞）","D. （−∞，−1）∪（2，+∞）"], ans:"B"},
-    {id:"RIN032", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x + 3）÷（x − 5）≥ 0 is（　　）", options:["A. （−3，5）","B. （−∞，−3）∪（5，+∞）","C. （−∞，−3]∪（5，+∞）","D. （−∞，−3]∪[5，+∞）"], ans:"C"},
-    {id:"RIN033", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x + 2）÷（x − 4）≤ 0 is（　　）", options:["A. （−∞，−2]∪（4，+∞）","B. （−2，4）","C. [−2，4]","D. [−2，4）"], ans:"D"},
-    {id:"RIN034", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x − 6）÷（x − 1）≤ 0 is（　　）", options:["A. （1，6]","B. （−∞，1）∪[6，+∞）","C. （1，6）","D. [1，6]"], ans:"A"},
-    {id:"RIN035", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x + 1）÷（x + 4）＞0 is（　　）", options:["A. （−4，−1）","B. （−∞，−4]∪[−1，+∞）","C. （−∞，−4）∪（−1，+∞）","D. （−∞，−1）∪（−4，+∞）"], ans:"C"},
-    {id:"RIN036", kp:"Solution set of a fractional inequality", q:"The solution set of the inequality （x − 4）÷（x + 2）＞0 is（　　）", options:["A. （−2，4）","B. （−∞，−2）∪（4，+∞）","C. （−∞，−2]∪[4，+∞）","D. （−∞，4）"], ans:"B"},
-    {id:"RIN037", kp:"Negative sign in denominator", q:"The solution set of the inequality （x − 3）÷（2 − x）＜0 is（　　）", options:["A. （−∞，2）∪（3，+∞）","B. （2，3）","C. （−∞，2]∪[3，+∞）","D. （−∞，3）"], ans:"A"},
-    {id:"RIN038", kp:"Negative sign in denominator", q:"The solution set of the inequality （2 − x）÷（x + 3）≤ 0 is（　　）", options:["A. （−3，2）","B. （−∞，−3]∪[2，+∞）","C. （−∞，2]","D. （−∞，−3）∪[2，+∞）"], ans:"D"},
-    {id:"RIN039", kp:"Negative sign in denominator", q:"The solution set of the inequality （x + 5）÷（1 − x）＞0 is（　　）", options:["A. （−∞，−5）∪（1，+∞）","B. （−5，1）","C. [−5，1）","D. （−5，1]"], ans:"B"},
-    {id:"RIN040", kp:"Negative sign in denominator", q:"The solution set of the inequality （4 − x）÷（x − 2）≥ 0 is（　　）", options:["A. （−∞，2）∪[4，+∞）","B. （2，4）","C. （2，4]","D. [2，4]"], ans:"C"},
-    {id:"RIN041", kp:"Right-hand side a constant", q:"The solution set of the inequality 2x÷（x + 1）≤ 1 is（　　）", options:["A. （−∞，−1）∪[1，+∞）","B. （−1，1）","C. [−1，1]","D. （−1，1]"], ans:"D"},
-    {id:"RIN042", kp:"Right-hand side a constant", q:"The solution set of the inequality （x − 2）÷（x + 3）＞1 is（　　）", options:["A. （−∞，−3）","B. （−3，+∞）","C. （−∞，−3]","D. （−∞，−3）∪（−3，+∞）"], ans:"A"},
-    {id:"RIN043", kp:"Right-hand side a constant", q:"The solution set of the inequality （x + 1）÷（x − 2）≤ 2 is（　　）", options:["A. （2，5）","B. （−∞，2）∪[5，+∞）","C. （−∞，2]∪[5，+∞）","D. （−∞，5]"], ans:"B"},
-    {id:"RIN044", kp:"Right-hand side a constant", q:"The solution set of the inequality （2x + 1）÷（x + 2）≥ 2 is（　　）", options:["A. （−2，+∞）","B. （−∞，−2]","C. （−∞，−2）","D. （−∞，−2）∪（−2，+∞）"], ans:"C"},
-    {id:"RIN045", kp:"Right-hand side a constant", q:"The solution set of the inequality （3x − 6）÷（x − 1）＜3 is（　　）", options:["A. （1，+∞）","B. （−∞，1）","C. [1，+∞）","D. （−∞，1）∪（1，+∞）"], ans:"A"},
-    {id:"RIN046", kp:"Right-hand side a constant", q:"The solution set of the inequality （x − 4）÷（x + 2）≥1 is（　　）", options:["A. （−2，+∞）","B. （−∞，−2]","C. （−∞，−2）∪（−2，+∞）","D. （−∞，−2）"], ans:"D"},
-    {id:"RIN047", kp:"Right-hand side a constant", q:"The solution set of the inequality （x + 3）÷（x − 1）＞−1 is（　　）", options:["A. （−1，1）","B. （−∞，−1]∪[1，+∞）","C. （−∞，−1）∪（1，+∞）","D. （−∞，1）"], ans:"C"},
-    {id:"RIN048", kp:"Right-hand side a constant", q:"The solution set of the inequality 2÷（x − 4）≥ −1 is（　　）", options:["A. （2，4）","B. （−∞，2]∪（4，+∞）","C. （−∞，2）∪（4，+∞）","D. （−∞，2]∪[4，+∞）"], ans:"B"},
-    {id:"RIN049", kp:"Right-hand side a constant", q:"The solution set of the inequality （x − 1）÷（x + 2）＜1 is（　　）", options:["A. （−2，+∞）","B. （−∞，−2）","C. [−2，+∞）","D. （−∞，−2）∪（−2，+∞）"], ans:"A"},
-    {id:"RIN050", kp:"Right-hand side a constant", q:"The solution set of the inequality （2x + 4）÷（x − 3）≤ 2 is（　　）", options:["A. （3，+∞）","B. （−∞，3]","C. （−∞，3）∪（3，+∞）","D. （−∞，3）"], ans:"D"}
-  ]
+  set_concepts: parseRaw(RAW_SETS),
+  set_relations: RAW_SETS.map(([id, kp, q, options, ans]) => ({
+    id: id.replace('SC', 'SR'), kp, q, options, ans
+  })),
+  set_union: parseRaw(RAW_UNION),
+  ineq_properties: parseRaw(RAW_IP),
+  quadratic_ineq: parseRaw(RAW_QI),
+  fractional_ineq: parseRaw(RAW_RIN)
 };
 
-// Generate Topic 6: Mixed Full-Mock Exam (50 questions, 10 selected from each topic)
-DATA.mixed_mock = [
-  ...DATA.sets_concepts.slice(0, 10),
-  ...DATA.sets_union.slice(0, 10),
-  ...DATA.ineq_properties.slice(0, 10),
-  ...DATA.ineq_quadratic.slice(0, 10),
-  ...DATA.ineq_fractional.slice(0, 10)
-].map((item, index) => ({
-  ...item,
-  id: `MOK${String(index + 1).padStart(3, '0')}`,
-  kp: `[Mock Test] ${item.kp}`
-}));
-
-/* ==================== 2. APPLICATION STATE & LOGIC ==================== */
-let currentTab = 'sets_concepts';
+/* ==================== 2. APPLICATION LOGIC ==================== */
+let currentTab = 'set_concepts';
 let currentMode = 'practice';
 let isGridCollapsed = false;
 
 let userAnswers = {
-  sets_concepts: {},
-  sets_union: {},
+  set_concepts: {},
+  set_relations: {},
+  set_union: {},
   ineq_properties: {},
-  ineq_quadratic: {},
-  ineq_fractional: {},
-  mixed_mock: {}
+  quadratic_ineq: {},
+  fractional_ineq: {}
 };
 
 let examSubmitted = {
-  sets_concepts: false,
-  sets_union: false,
+  set_concepts: false,
+  set_relations: false,
+  set_union: false,
   ineq_properties: false,
-  ineq_quadratic: false,
-  ineq_fractional: false,
-  mixed_mock: false
+  quadratic_ineq: false,
+  fractional_ineq: false
 };
 
-// Timer State
-let examDurationSeconds = 45 * 60; // default 45 min
-let examRemainingSeconds = 45 * 60;
+/* Timer State */
+let examDurationMinutes = 45;
+let examTimeRemaining = 45 * 60;
 let timerInterval = null;
 let isTimerRunning = false;
 
 function switchTab(tabKey) {
   currentTab = tabKey;
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  const activeBtn = document.getElementById(`tab-${tabKey}`);
-  if (activeBtn) activeBtn.classList.add('active');
+  document.getElementById(`tab-${tabKey}`).classList.add('active');
 
-  const topicNames = {
-    sets_concepts: "Set Concepts (集合概念)",
-    sets_union: "Set Union (集合并集)",
-    ineq_properties: "Inequality Properties (不等式性质)",
-    ineq_quadratic: "Quadratic Inequalities (一元二次不等式)",
-    ineq_fractional: "Fractional Inequalities (分式不等式)",
-    mixed_mock: "Mixed Mock Exam (综合全真测验)"
+  const names = {
+    set_concepts: "Set Concepts",
+    set_relations: "Set Relations",
+    set_union: "Union of Sets",
+    ineq_properties: "Inequality Properties",
+    quadratic_ineq: "Quadratic Inequalities",
+    fractional_ineq: "Fractional Inequalities"
   };
+  document.getElementById('key-title').innerText = `Quick Answer Key (${names[tabKey]})`;
 
-  document.getElementById('key-title').innerText = `Quick Answer Key: ${topicNames[tabKey]}`;
   renderApp();
 }
 
@@ -1093,124 +1012,136 @@ function setMode(mode) {
   document.getElementById('score-box').style.display = mode === 'exam' ? 'flex' : 'none';
   document.getElementById('practice-acc-box').style.display = mode === 'practice' ? 'flex' : 'none';
   document.getElementById('btn-submit-exam').style.display = mode === 'exam' ? 'inline-block' : 'none';
-  document.getElementById('exam-timer-pill').style.display = mode === 'exam' ? 'flex' : 'none';
 
+  const timerBox = document.getElementById('timer-box');
   if (mode === 'exam') {
+    timerBox.style.display = 'flex';
     if (!isTimerRunning && !examSubmitted[currentTab]) {
       startTimer();
     }
   } else {
+    timerBox.style.display = 'none';
     pauseTimer();
   }
 
   renderApp();
 }
 
-/* ==================== 3. TIMER SYSTEM ==================== */
-function updateTimerDisplay() {
-  const mins = Math.floor(examRemainingSeconds / 60);
-  const secs = examRemainingSeconds % 60;
-  const timeStr = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-  document.getElementById('timer-display').innerText = timeStr;
-
-  const pill = document.getElementById('exam-timer-pill');
-  if (examRemainingSeconds <= 60) {
-    pill.className = 'timer-pill danger';
-  } else if (examRemainingSeconds <= 300) {
-    pill.className = 'timer-pill warning';
-  } else {
-    pill.className = 'timer-pill';
-  }
-}
-
+/* Timer Control Functions */
 function startTimer() {
-  if (timerInterval) clearInterval(timerInterval);
+  if (isTimerRunning) return;
   isTimerRunning = true;
   document.getElementById('timer-toggle-btn').innerText = '⏸';
-
   timerInterval = setInterval(() => {
-    if (examRemainingSeconds > 0) {
-      examRemainingSeconds--;
+    if (examTimeRemaining > 0) {
+      examTimeRemaining--;
       updateTimerDisplay();
     } else {
-      clearInterval(timerInterval);
-      isTimerRunning = false;
-      playBeepAlert();
-      alert('⏰ Exam Time is up! Your answers are being automatically submitted for scoring.');
+      pauseTimer();
+      alert("Time is up! Your exam will now be submitted and graded.");
       submitExam();
     }
   }, 1000);
 }
 
 function pauseTimer() {
-  if (timerInterval) clearInterval(timerInterval);
+  if (!isTimerRunning) return;
+  clearInterval(timerInterval);
   isTimerRunning = false;
-  const toggleBtn = document.getElementById('timer-toggle-btn');
-  if (toggleBtn) toggleBtn.innerText = '▶';
+  const btn = document.getElementById('timer-toggle-btn');
+  if (btn) btn.innerText = '▶';
 }
 
 function toggleTimer() {
   if (isTimerRunning) {
     pauseTimer();
   } else {
-    if (examRemainingSeconds > 0 && !examSubmitted[currentTab]) {
-      startTimer();
-    }
+    startTimer();
   }
 }
 
-function openTimerModal() {
-  pauseTimer();
-  document.getElementById('timer-modal').style.display = 'flex';
+function updateTimerDisplay() {
+  const m = Math.floor(examTimeRemaining / 60);
+  const s = examTimeRemaining % 60;
+  const str = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+  const el = document.getElementById('timer-display');
+  if (el) {
+    el.innerText = str;
+    el.style.color = examTimeRemaining <= 300 ? 'var(--danger)' : 'var(--slate-800)';
+  }
+}
+
+function ensureTimerModal() {
+  let backdrop = document.getElementById('timer-modal-backdrop');
+  if (backdrop) return backdrop;
+
+  backdrop = document.createElement('div');
+  backdrop.id = 'timer-modal-backdrop';
+  backdrop.className = 'timer-modal-backdrop';
+  backdrop.hidden = true;
+  backdrop.innerHTML = `
+    <section class="timer-modal" role="dialog" aria-modal="true" aria-labelledby="timer-modal-title">
+      <h2 id="timer-modal-title">Set exam timer</h2>
+      <p>Choose a duration from 1 to 300 minutes.</p>
+      <form id="timer-modal-form">
+        <label for="timer-duration-input">Duration (minutes)</label>
+        <input id="timer-duration-input" name="duration" type="number" min="1" max="300" step="1" required inputmode="numeric" />
+        <div id="timer-modal-error" class="timer-modal-error" role="alert" aria-live="polite"></div>
+        <div class="timer-modal-actions">
+          <button class="timer-modal-cancel" type="button" id="timer-modal-cancel">Cancel</button>
+          <button class="timer-modal-save" type="submit">Set timer</button>
+        </div>
+      </form>
+    </section>`;
+  document.body.appendChild(backdrop);
+
+  backdrop.addEventListener('click', function (event) {
+    if (event.target === backdrop) closeTimerModal();
+  });
+  document.getElementById('timer-modal-cancel').addEventListener('click', closeTimerModal);
+  document.getElementById('timer-modal-form').addEventListener('submit', applyTimerDuration);
+  return backdrop;
+}
+
+function promptTimerDuration() {
+  const backdrop = ensureTimerModal();
+  const input = document.getElementById('timer-duration-input');
+  const error = document.getElementById('timer-modal-error');
+  input.value = String(examDurationMinutes);
+  error.textContent = '';
+  backdrop.hidden = false;
+  window.setTimeout(() => { input.focus(); input.select(); }, 0);
 }
 
 function closeTimerModal() {
-  document.getElementById('timer-modal').style.display = 'none';
-  if (currentMode === 'exam' && !examSubmitted[currentTab]) {
-    startTimer();
-  }
+  const backdrop = document.getElementById('timer-modal-backdrop');
+  if (backdrop) backdrop.hidden = true;
 }
 
-function selectPresetMinutes(mins) {
-  document.getElementById('custom-minutes-input').value = mins;
-  document.querySelectorAll('.timer-preset-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.innerText.includes(`${mins} Min`));
-  });
-}
-
-function applyTimerSettings() {
-  const customVal = parseInt(document.getElementById('custom-minutes-input').value, 10);
-  if (isNaN(customVal) || customVal < 1) {
-    alert('Please enter a valid time (at least 1 minute).');
+function applyTimerDuration(event) {
+  event.preventDefault();
+  const input = document.getElementById('timer-duration-input');
+  const error = document.getElementById('timer-modal-error');
+  const mins = Number(input.value);
+  if (!Number.isInteger(mins) || mins < 1 || mins > 300) {
+    error.textContent = 'Enter a whole number between 1 and 300.';
+    input.focus();
     return;
   }
-  examDurationSeconds = customVal * 60;
-  examRemainingSeconds = examDurationSeconds;
+
+  examDurationMinutes = mins;
+  examTimeRemaining = mins * 60;
   updateTimerDisplay();
-  document.getElementById('timer-modal').style.display = 'none';
-  if (currentMode === 'exam' && !examSubmitted[currentTab]) {
+  closeTimerModal();
+  if (!isTimerRunning && currentMode === 'exam' && !examSubmitted[currentTab]) {
     startTimer();
   }
 }
 
-function playBeepAlert() {
-  try {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
-    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-    osc.start();
-    osc.stop(audioCtx.currentTime + 0.8);
-  } catch (e) {
-    console.log('Audio alert not supported or permitted without gesture.');
-  }
-}
+window.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') closeTimerModal();
+});
 
-/* ==================== 4. RENDERING & USER ACTIONS ==================== */
 function toggleNavigatorGrid() {
   isGridCollapsed = !isGridCollapsed;
   const navRow = document.getElementById('bar-nav-row');
@@ -1224,7 +1155,6 @@ function renderApp() {
   renderQuestions();
   renderAnswerKeyTable();
   updateStats();
-  updateTimerDisplay();
 }
 
 function renderNavigator() {
@@ -1242,14 +1172,13 @@ function renderNavigator() {
 
     const chosen = answers[q.id];
     if (chosen) {
-      if (currentMode === 'practice') {
-        node.classList.add(chosen === q.ans ? 'correct' : 'wrong');
-      } else if (isExamDone) {
+      if (currentMode === 'practice' || isExamDone) {
         node.classList.add(chosen === q.ans ? 'correct' : 'wrong');
       } else {
         node.classList.add('answered');
       }
     }
+
     container.appendChild(node);
   });
 }
@@ -1276,13 +1205,7 @@ function renderQuestions() {
         btnClasses.push('selected');
       }
 
-      if (currentMode === 'practice' && chosen) {
-        if (optLetter === item.ans) {
-          btnClasses.push('correct');
-        } else if (chosen === optLetter && chosen !== item.ans) {
-          btnClasses.push('wrong');
-        }
-      } else if (isExamDone) {
+      if ((currentMode === 'practice' && chosen) || isExamDone) {
         if (optLetter === item.ans) {
           btnClasses.push('correct');
         } else if (chosen === optLetter && chosen !== item.ans) {
@@ -1361,8 +1284,8 @@ function updateStats() {
 }
 
 function submitExam() {
-  pauseTimer();
   examSubmitted[currentTab] = true;
+  pauseTimer();
   renderApp();
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
@@ -1371,10 +1294,9 @@ function resetCurrentTab() {
   if (confirm(`Reset all answers for the current topic?`)) {
     userAnswers[currentTab] = {};
     examSubmitted[currentTab] = false;
-    examRemainingSeconds = examDurationSeconds;
-    if (currentMode === 'exam') {
-      startTimer();
-    }
+    examTimeRemaining = examDurationMinutes * 60;
+    updateTimerDisplay();
+    if (currentMode === 'exam') startTimer();
     renderApp();
   }
 }
@@ -1414,7 +1336,8 @@ function renderAnswerKeyTable() {
   table.innerHTML = `<thead>${headerHtml}</thead><tbody>${bodyHtml}</tbody>`;
 }
 
-// Initial Boot
+// Initial Run
+updateTimerDisplay();
 renderApp();
 </script>
 </body>
